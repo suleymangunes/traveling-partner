@@ -23,6 +23,13 @@ class _LoginViewState extends State<LoginView> {
   }
 
   @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
@@ -45,6 +52,8 @@ class _LoginViewState extends State<LoginView> {
               child: const Text("Login"),
             ),
             const Divider(),
+            ElevatedButton(
+                onPressed: () {}, child: const Text("sign in with google")),
             TextButton(
                 onPressed: () {
                   AppRouterObject.appRouter.push(const RegisterRoute());
