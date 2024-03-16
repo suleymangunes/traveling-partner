@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210723450216",
+    "project_id": "traveling-partner",
+    "storage_bucket": "traveling-partner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210723450216:android:5b7f87a0cc9bdb3bbc7add",
+        "android_client_info": {
+          "package_name": "com.example.traveling_partner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANmcE-MCB7NrqpzynqA5ZFdNObUIv9i7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
