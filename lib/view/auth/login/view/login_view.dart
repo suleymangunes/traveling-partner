@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
@@ -43,10 +44,16 @@ class _LoginViewState extends State<LoginView> {
               controller: _passwordController,
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   print(_emailController.text);
                   print(_passwordController.text);
+                  print("basladi");
+                  await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: "email@gmail.com", password: "password");
+                  print("giri yapildi");
+                  await FirebaseAuth.instance.signOut();
+                  print("cikis yapildi");
                 }
               },
               child: const Text("Login"),

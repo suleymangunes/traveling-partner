@@ -1,6 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:traveling_partner/core/init/navigation/app_router.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/view/auth/register/service/register_service.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -36,6 +37,8 @@ class _RegisterViewState extends State<RegisterView> {
     super.dispose();
   }
 
+  AuthService authService = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,12 +59,16 @@ class _RegisterViewState extends State<RegisterView> {
               controller: _passwordAgainController,
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   print(_nameController.text);
                   print(_emailController.text);
                   print(_passwordController.text);
                   print(_passwordAgainController.text);
+
+                  // await AuthService().createPerson("name", "email", "password");
+                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                      email: "email3@gmail.com", password: "password");
                 }
               },
               child: const Text("Register"),
