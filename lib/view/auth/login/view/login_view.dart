@@ -74,7 +74,13 @@ class _LoginViewState extends State<LoginView> {
                 onPressed: () {
                   AppRouterObject.appRouter.push(const RegisterRoute());
                 },
-                child: const Text("register"))
+                child: const Text("register")),
+            TextButton(
+              onPressed: () {
+                AppRouterObject.appRouter.push(const HomeRoute());
+              },
+              child: const Text("homepage"),
+            ),
           ],
         ),
       ),
