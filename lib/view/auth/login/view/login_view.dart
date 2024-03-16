@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 
@@ -29,6 +31,8 @@ class _LoginViewState extends State<LoginView> {
     _passwordController.dispose();
     super.dispose();
   }
+
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +64,10 @@ class _LoginViewState extends State<LoginView> {
             ),
             const Divider(),
             ElevatedButton(
-                onPressed: () {}, child: const Text("sign in with google")),
+                onPressed: () {
+                  signInWithGoogle();
+                },
+                child: const Text("sign in with google")),
             TextButton(
                 onPressed: () {
                   AppRouterObject.appRouter.push(const RegisterRoute());
@@ -70,5 +77,19 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
     );
+  }
+
+  Future<User?> signInWithGoogle() async {
+    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+
+    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+        accessToken: gAuth.accessToken, idToken: gAuth.idToken);
+
+    final UserCredential userCredential =
+        await firebaseAuth.signInWithCredential(credential);
+    log(userCredential.user!.email.toString());
+    return userCredential.user;
   }
 }

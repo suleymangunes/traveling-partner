@@ -7,7 +7,7 @@ import 'package:traveling_partner/firebase_options.dart';
 class TravelingPartnerApp {
   Future<void> run() async {
     _initializeFlutter();
-    _initializeFirebase();
+    await _initializeFirebase();
     _runApp();
   }
 

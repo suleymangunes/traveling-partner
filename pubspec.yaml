@@ -31,10 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # routing
   auto_route: ^7.9.0
-
 
   # database management 
   cloud_firestore: ^4.15.9
