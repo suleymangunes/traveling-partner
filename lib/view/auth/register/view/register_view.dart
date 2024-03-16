@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
@@ -68,7 +69,14 @@ class _RegisterViewState extends State<RegisterView> {
 
                   // await AuthService().createPerson("name", "email", "password");
                   await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: "email3@gmail.com", password: "password");
+                      email: "email7@gmail.com", password: "password");
+                  await FirebaseFirestore.instance
+                      .collection("Users")
+                      .doc("email")
+                      .set({
+                    "name": "suleyman",
+                    "email": "asdf",
+                  });
                 }
               },
               child: const Text("Register"),

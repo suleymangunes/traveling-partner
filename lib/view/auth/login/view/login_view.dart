@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -64,7 +65,8 @@ class _LoginViewState extends State<LoginView> {
             ),
             const Divider(),
             ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
+                  await GoogleSignIn().signOut();
                   signInWithGoogle();
                 },
                 child: const Text("sign in with google")),
@@ -90,6 +92,11 @@ class _LoginViewState extends State<LoginView> {
     final UserCredential userCredential =
         await firebaseAuth.signInWithCredential(credential);
     log(userCredential.user!.email.toString());
+    log(userCredential.user!.displayName.toString());
+    FirebaseFirestore.instance.collection("Users").doc("email3").set({
+      "email": "email3",
+      "name": "isim vs3",
+    });
     return userCredential.user;
   }
 }
