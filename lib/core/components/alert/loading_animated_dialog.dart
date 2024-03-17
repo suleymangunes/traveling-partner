@@ -8,7 +8,7 @@ class LoadingAnimatedDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      child: Lottie.asset(AnimationEnum.travel.path),
+      child: Lottie.asset(AnimationEnum.fly.path),
     );
   }
 }
