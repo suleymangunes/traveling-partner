@@ -8,5 +8,5 @@ class ColorSchemeLight {
   static ColorSchemeLight? get instance =>
       _instance ??= ColorSchemeLight._init();
 
-  final Color emperor = const Color(0xFF505050);
+  final Color emperor = const Color(0xFF1D1D1D);
 }

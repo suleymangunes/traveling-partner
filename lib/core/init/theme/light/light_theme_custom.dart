@@ -16,7 +16,7 @@ class LightThemeCustom {
       textTheme: TextTheme(
         headlineSmall: TextStyle(
           fontFamily: FontEnum.cabinRegular.value,
-          fontSize: 21,
+          fontSize: 23,
           color: ColorSchemeLight.instance!.emperor,
         ),
         titleLarge: TextStyle(

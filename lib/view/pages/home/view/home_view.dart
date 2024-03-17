@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/product/state-enum/state_enum.dart';
+import 'package:traveling_partner/view/_product/home/page/home_base_page.dart';
 import 'package:traveling_partner/view/_product/home/page/home_error_page.dart';
 import 'package:traveling_partner/view/_product/home/page/home_initial_page.dart';
 import 'package:traveling_partner/view/_product/home/page/home_loading_page.dart';
 import 'package:traveling_partner/view/pages/home/view-model/i_location_state.dart';
 import 'package:traveling_partner/view/pages/home/view-model/location_cubit.dart';
+import 'package:traveling_partner/view/pages/home/view-model/location_state.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -21,7 +23,7 @@ class HomeView extends StatelessWidget {
             case StateEnum.loading:
               return const HomeLoadingPage();
             case StateEnum.completed:
-              return const HomeErrorPage();
+              return HomeBasePage(state: state as LocationCompletedState);
             case StateEnum.error:
               return const HomeErrorPage();
           }

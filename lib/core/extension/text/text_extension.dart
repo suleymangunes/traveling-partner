@@ -11,4 +11,17 @@ extension TextExtension on BuildContext {
   ColorSchemeCommon get colorSchemeCommon => ColorSchemeCommon.instance!;
 
   TextStyle get titleLarge => textTheme.titleLarge!;
+
+  TextStyle get titleSmall => textTheme.titleSmall!;
+
+  TextStyle get bodyLarge => textTheme.bodyLarge!;
+
+  TextStyle get spacingHeadlineSmall => textTheme.headlineSmall!.copyWith(
+        letterSpacing: 1,
+      );
+
+  TextStyle get spacingBoldTitleLarge => textTheme.titleLarge!.copyWith(
+        letterSpacing: 1.25,
+        fontWeight: FontWeight.w600,
+      );
 }
