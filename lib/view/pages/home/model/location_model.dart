@@ -35,9 +35,9 @@ class LocationModel extends Equatable {
 
 @JsonSerializable()
 class Users extends Equatable {
-  final String? startingDate;
+  final DateTime? startingDate;
   final String? name;
-  final String? endingDate;
+  final DateTime? endingDate;
   final String? email;
 
   const Users({this.startingDate, this.name, this.endingDate, this.email});
