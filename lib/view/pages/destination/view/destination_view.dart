@@ -46,7 +46,7 @@ class DestinationView extends StatelessWidget {
                     children: [
                       DestinationName(locationModel: locationModel),
                       const Spacer(),
-                      const ShareDestionationButton()
+                      ShareDestionationButton(locationModel: locationModel)
                     ],
                   ),
                   DestinationDefinition(locationModel: locationModel),

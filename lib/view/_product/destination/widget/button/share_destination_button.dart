@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
+import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class ShareDestionationButton extends StatelessWidget {
   const ShareDestionationButton({
     super.key,
+    required this.locationModel,
   });
+
+  final LocationModel locationModel;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.share_rounded, size: context.iconSize),
-      onPressed: () {},
+      onPressed: () {
+        Share.share(locationModel.name ?? LocaleKeys.notFound);
+      },
     );
   }
 }
