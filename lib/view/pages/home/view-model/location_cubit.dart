@@ -13,8 +13,6 @@ class LocationCubit extends Cubit<ILocationState> {
     try {
       emit(LocationLoadingState());
       final response = await locationService.fetchLocations();
-      print(response.first.toJson());
-      print(response.first.users?.first.toJson());
 
       emit(LocationCompletedState(response));
     } catch (e) {
