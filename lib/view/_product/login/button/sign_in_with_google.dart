@@ -1,16 +1,14 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:traveling_partner/core/constants/svg/svg_enum.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/view/auth/login/service/login_service.dart';
+import 'package:traveling_partner/view/auth/login/view-model/get_it_login_instance.dart';
 
-class SignInWithGoogle extends StatelessWidget {
+class SignInWithGoogle extends StatelessWidget with GetItLoginInstance {
   const SignInWithGoogle({
     super.key,
   });
@@ -26,8 +24,7 @@ class SignInWithGoogle extends StatelessWidget {
         minimumSize: context.buttonSized,
       ),
       onPressed: () async {
-        await GoogleSignIn().signOut();
-        signInWithGoogle();
+        LoginService(authInstance: FirebaseAuth.instance).loginWithGoogle();
       },
       child: Row(
         children: [
@@ -44,25 +41,5 @@ class SignInWithGoogle extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<User?> signInWithGoogle() async {
-    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
-
-    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
-
-    final credential = GoogleAuthProvider.credential(
-        accessToken: gAuth.accessToken, idToken: gAuth.idToken);
-
-    final UserCredential userCredential =
-        await firebaseAuth.signInWithCredential(credential);
-    log(userCredential.user!.email.toString());
-    log(userCredential.user!.displayName.toString());
-    FirebaseFirestore.instance.collection("Users").doc("email3").set({
-      "email": "email3",
-      "name": "isim vs3",
-    });
-    return userCredential.user;
   }
 }
