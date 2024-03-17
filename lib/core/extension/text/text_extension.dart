@@ -12,9 +12,14 @@ extension TextExtension on BuildContext {
 
   TextStyle get titleLarge => textTheme.titleLarge!;
 
+  TextStyle get titleMedium => textTheme.titleMedium!;
+
   TextStyle get titleSmall => textTheme.titleSmall!;
 
   TextStyle get bodyLarge => textTheme.bodyLarge!;
+  TextStyle get bodyLargeBold => textTheme.bodyLarge!.copyWith(
+        fontWeight: FontWeight.bold,
+      );
 
   TextStyle get spacingHeadlineSmall => textTheme.headlineSmall!.copyWith(
         letterSpacing: 1,

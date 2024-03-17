@@ -45,6 +45,9 @@ dependencies:
   # animation
   lottie: ^3.1.0
 
+  # svg 
+  flutter_svg: ^2.0.10+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,6 +65,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/animation/
+    - assets/svg/
 
   fonts:
     - family: CabinRegular

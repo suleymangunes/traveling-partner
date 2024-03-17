@@ -2,7 +2,14 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:traveling_partner/core/constants/svg/svg_enum.dart';
+import 'package:traveling_partner/core/extension/context/context_extension.dart';
+import 'package:traveling_partner/core/extension/text/text_extension.dart';
+import 'package:traveling_partner/core/extension/validator/email_validator.dart';
+import 'package:traveling_partner/core/extension/validator/string_validator.dart';
+import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 
@@ -40,48 +47,140 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              controller: _emailController,
-            ),
-            TextFormField(
-              controller: _passwordController,
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                if (_formKey.currentState!.validate()) {
-                  print(_emailController.text);
-                  print(_passwordController.text);
-                  print("basladi");
-                  await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: "email@gmail.com", password: "password");
-                  print("giri yapildi");
-                  await FirebaseAuth.instance.signOut();
-                  print("cikis yapildi");
-                }
-              },
-              child: const Text("Login"),
-            ),
-            const Divider(),
-            ElevatedButton(
+        child: Padding(
+          padding: EdgeInsets.all(context.width * 0.05),
+          child: Column(
+            children: [
+              SizedBox(height: context.height * 0.1),
+              SizedBox(
+                  height: context.height * 0.15,
+                  child: SvgPicture.asset(SvgEnum.traveling.path)),
+              SizedBox(height: context.height * 0.1),
+              TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  isDense: true,
+                  border: const OutlineInputBorder(),
+                  hintText: "Eposta",
+                  prefixIcon: const Icon(Icons.mail_outline_rounded),
+                  errorStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: context.colorScheme.error,
+                      ),
+                ),
+                style: context.titleMedium,
+                validator: (value) => (value != null && value.isValidEmail())
+                    ? null
+                    : LocaleKeys.validEmail,
+              ),
+              SizedBox(height: context.height * 0.015),
+              TextFormField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  isDense: true,
+                  border: const OutlineInputBorder(),
+                  hintText: "Şifre",
+                  prefixIcon: const Icon(Icons.lock_outline_rounded),
+                  errorStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: context.colorScheme.error,
+                      ),
+                ),
+                style: context.titleMedium,
+                validator: (value) =>
+                    value.validateEmpty(LocaleKeys.validPassword),
+              ),
+              SizedBox(height: context.height * 0.02),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: context.colorScheme.primary,
+                    padding: const EdgeInsets.all(15),
+                    minimumSize: Size(
+                        context.width, Theme.of(context).buttonTheme.height)),
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    print("basildi");
+                    // print(_emailController.text);
+                    // print(_passwordController.text);
+                    // print("basladi");
+                    // await FirebaseAuth.instance.signInWithEmailAndPassword(
+                    //     email: "email@gmail.com", password: "password");
+                    // print("giri yapildi");
+                    // await FirebaseAuth.instance.signOut();
+                    // print("cikis yapildi");
+                  }
+                },
+                child: Text(
+                  "Giriş Yap",
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: context.colorScheme.background,
+                      letterSpacing: 1.5),
+                ),
+              ),
+              SizedBox(height: context.height * 0.02),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Text(
+                      "Ya da",
+                      style: context.bodyLarge,
+                    ),
+                  ),
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              SizedBox(height: context.height * 0.02),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  surfaceTintColor: Colors.transparent,
+                  elevation: 5,
+                  padding: const EdgeInsets.all(15),
+                  minimumSize:
+                      Size(context.width, Theme.of(context).buttonTheme.height),
+                ),
                 onPressed: () async {
                   await GoogleSignIn().signOut();
                   signInWithGoogle();
                 },
-                child: const Text("sign in with google")),
-            TextButton(
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      SvgEnum.gooogle.path,
+                      height: Theme.of(context).buttonTheme.height,
+                    ),
+                    const Spacer(),
+                    Text(
+                      "Google İle Giriş Yap",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            letterSpacing: 1.5,
+                          ),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              TextButton(
                 onPressed: () {
                   AppRouterObject.appRouter.push(const RegisterRoute());
                 },
-                child: const Text("register")),
-            TextButton(
-              onPressed: () {
-                AppRouterObject.appRouter.push(const HomeRoute());
-              },
-              child: const Text("homepage"),
-            ),
-          ],
+                child: RichText(
+                    text: TextSpan(
+                  children: [
+                    TextSpan(
+                      style: context.bodyLarge,
+                      text: "Hesabın yok mu? ",
+                    ),
+                    TextSpan(
+                      style: context.bodyLargeBold,
+                      text: "Hemen kaydol",
+                    ),
+                  ],
+                )),
+              ),
+            ],
+          ),
         ),
       ),
     );
