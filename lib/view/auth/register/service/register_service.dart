@@ -1,63 +1,38 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:traveling_partner/product/database-collections/database_collection_enum.dart';
+import 'package:traveling_partner/view/auth/register/model/register_model.dart';
+import 'package:traveling_partner/view/auth/register/service/i_register_repository.dart';
 
-class AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+class RegisterService extends IRegisterRepository {
+  final FirebaseAuth authInstance;
+  final FirebaseFirestore firestoreInstance;
 
-  Future<void> resetPassword(String email) async {
-    var user = await _auth.sendPasswordResetEmail(email: email);
-    return user;
-  }
+  RegisterService(
+      {required this.authInstance, required this.firestoreInstance});
 
-  Future<User?> signIn(String email, String password) async {
-    var user = await _auth.signInWithEmailAndPassword(
-        email: email, password: password);
-    return user.user;
-  }
+  @override
+  Future<UserCredential> register(
+      {required RegisterModel registerModel}) async {
+    final String? name = registerModel.name;
+    final String? email = registerModel.email;
+    final String? password = registerModel.password;
 
-  Future<void> signOut() async {
-    return _auth.signOut();
-  }
+    if (email != null && password != null && name != null) {
+      var user = await authInstance.createUserWithEmailAndPassword(
+          email: email, password: password);
+      await user.user?.updateDisplayName(name);
 
-  User? issignin() {
-    return _auth.currentUser;
-  }
-
-  String? infouser() {
-    return _auth.currentUser?.uid;
-  }
-
-  String? name() {
-    return _auth.currentUser?.email;
-  }
-
-  Future<DocumentSnapshot<Map<String, dynamic>>> username() {
-    return _firestore.collection('Person').doc(infouser()).get();
-  }
-
-  Future<QuerySnapshot<Map<String, dynamic>>> derslerimiGoster() async {
-    return await _firestore
-        .collection('Person')
-        .doc(infouser())
-        .collection('alinacakdersler')
-        .get();
-  }
-
-  Future<User?> createPerson(String name, String email, String password) async {
-    print("bu kisim calisti");
-    print(_auth);
-    print(_auth.currentUser);
-
-    var user = await _auth.createUserWithEmailAndPassword(
-        email: email, password: password);
-
-    // await _firestore.collection("Person").doc(user.user!.uid).set({
-    //   'userName': name,
-    //   'email': email,
-    //   "password": password,
-    // });
-
-    return user.user;
+      await firestoreInstance
+          .collection(DatabaseCollectionEnum.users.name)
+          .doc(user.user!.uid)
+          .set({
+        'userName': name,
+        'email': email,
+      });
+      return user;
+    } else {
+      throw "email or password is null";
+    }
   }
 }

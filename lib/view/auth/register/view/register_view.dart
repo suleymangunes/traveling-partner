@@ -6,7 +6,6 @@ import 'package:traveling_partner/view/_product/register/widget/image/register_i
 import 'package:traveling_partner/view/_product/register/widget/textbutton/login_now.dart';
 import 'package:traveling_partner/view/_product/register/widget/textfield/name_surname_text_field.dart';
 import 'package:traveling_partner/view/_product/register/widget/textfield/register_email_textfield.dart';
-import 'package:traveling_partner/view/auth/register/service/register_service.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -38,8 +37,6 @@ class _RegisterViewState extends State<RegisterView> {
     _passwordController.dispose();
     super.dispose();
   }
-
-  AuthService authService = AuthService();
 
   void changePasswordObscure() {
     setState(() {

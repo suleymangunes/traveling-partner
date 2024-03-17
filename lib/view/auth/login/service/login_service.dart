@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/database-collections/database_collection_enum.dart';
 import 'package:traveling_partner/view/auth/login/model/login_model.dart';
 import 'package:traveling_partner/view/auth/login/service/i_login_repository.dart';
 
@@ -46,8 +47,8 @@ class LoginService extends ILoginRepository {
       log(userCredential.user!.email.toString());
       log(userCredential.user!.displayName.toString());
       FirebaseFirestore.instance
-          .collection("Users")
-          .doc(userCredential.user!.email)
+          .collection(DatabaseCollectionEnum.users.name)
+          .doc(userCredential.user!.uid)
           .set({
         "email": userCredential.user!.email,
         "name": userCredential.user!.displayName,

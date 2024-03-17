@@ -30,6 +30,7 @@ class LoginButton extends StatelessWidget {
       listener: (context, state) {
         if (state.status == StateEnum.loading) {
           showDialog(
+            barrierDismissible: false,
             context: context,
             builder: (context) {
               return const LoadingAnimatedDialog();
@@ -38,6 +39,7 @@ class LoginButton extends StatelessWidget {
         } else if (state.status == StateEnum.error) {
           Navigator.pop(context);
           showDialog(
+            barrierDismissible: false,
             context: context,
             builder: (context) {
               return const ErrorAnimatedDialog();

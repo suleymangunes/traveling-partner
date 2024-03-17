@@ -1,3 +1,4 @@
 enum DatabaseCollectionEnum {
   locations,
+  users,
 }
