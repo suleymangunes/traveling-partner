@@ -1,6 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:traveling_partner/view/pages/home/model/location_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:traveling_partner/view/pages/home/view-model/i_location_state.dart';
+import 'package:traveling_partner/view/pages/home/view-model/location_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -8,23 +9,11 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text("this is Home page"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          fetchData();
+      body: BlocBuilder<LocationCubit, ILocationState>(
+        builder: (context, state) {
+          return const Text("oldu");
         },
       ),
     );
-  }
-
-  Future<void> fetchData() async {
-    var locations =
-        await FirebaseFirestore.instance.collection("locations").get();
-
-    var locationModels =
-        locations.docs.map((e) => LocationModel.fromJson(e.data()));
-    print(locationModels.first.city);
   }
 }
