@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/init/localization/locale_common_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/core/init/theme/dark/dark_theme_custom.dart';
+import 'package:traveling_partner/core/init/theme/light/light_theme_custom.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,6 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: LightThemeCustom().theme,
+      darkTheme: DarkThemeCustom().theme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       title: LocaleCommonKeys.travelingPartner,
       routerConfig: AppRouterObject.appRouter.config(),

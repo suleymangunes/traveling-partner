@@ -15,20 +15,13 @@ class HomeView extends StatelessWidget {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 "Reloaded 1 of 1183 libraries in 1,937ms (compile: 40 ms, reload: 293 ms, reassemble: 232 ms).",
-                style: TextStyle(
-                  fontSize: 35,
-                ),
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               Text(
                 "Reloaded 1 of 1183 libraries in 1,937ms (compile: 40 ms, reload: 293 ms, reassemble: 232 ms).",
-                style: TextStyle(
-                  fontSize: 30,
-                  // fontWeight: FontWeight.bold,
-                  fontFamily: FontEnum.cabinRegular.value,
-                  // color: Colors.black87,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ],
           );
