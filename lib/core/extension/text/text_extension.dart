@@ -26,10 +26,21 @@ extension TextExtension on BuildContext {
         letterSpacing: 1,
       );
 
+  TextStyle get spacingHeadlineSmallBold => textTheme.headlineSmall!.copyWith(
+        letterSpacing: 1,
+        fontWeight: FontWeight.bold,
+      );
+
   TextStyle get spacingBoldTitleLarge => textTheme.titleLarge!.copyWith(
         letterSpacing: 1.25,
         fontWeight: FontWeight.w600,
       );
+
+  TextStyle get spacingBoldTitleMedium => textTheme.titleMedium!.copyWith(
+        letterSpacing: 1.25,
+        fontWeight: FontWeight.w600,
+      );
+
   TextStyle? get errorStyle =>
       textTheme.titleSmall?.copyWith(color: colorScheme.error);
 

@@ -24,4 +24,7 @@ abstract class LocaleKeys {
   static const String nameSurname = 'İsim Soyisim';
   static const String validName = 'Geçerli bir isim soyisim girin';
   static const String signUp = 'Kayıt ol';
+  static const String about = 'Hakkında';
+  static const String places = 'Gezilecek Yerler';
+  static const String whosWithMe = 'Kimler Benimle';
 }

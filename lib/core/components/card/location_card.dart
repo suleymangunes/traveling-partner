@@ -4,6 +4,8 @@ import 'package:traveling_partner/core/extension/context/context_extension.dart'
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_common_keys.dart';
 import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
+import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class LocationCard extends StatelessWidget {
@@ -23,7 +25,10 @@ class LocationCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         margin: context.cardMargin,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            AppRouterObject.appRouter
+                .push(DestinationRoute(location: location));
+          },
           child: Column(
             children: [
               SizedBox(
