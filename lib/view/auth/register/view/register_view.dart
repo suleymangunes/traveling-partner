@@ -1,7 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/core/extension/context/context_extension.dart';
+import 'package:traveling_partner/view/_product/login/textfield/password_text_field.dart';
+import 'package:traveling_partner/view/_product/register/widget/button/register_button.dart';
+import 'package:traveling_partner/view/_product/register/widget/image/register_image.dart';
+import 'package:traveling_partner/view/_product/register/widget/textbutton/login_now.dart';
+import 'package:traveling_partner/view/_product/register/widget/textfield/name_surname_text_field.dart';
+import 'package:traveling_partner/view/_product/register/widget/textfield/register_email_textfield.dart';
 import 'package:traveling_partner/view/auth/register/service/register_service.dart';
 
 class RegisterView extends StatefulWidget {
@@ -15,7 +19,6 @@ class _RegisterViewState extends State<RegisterView> {
   late TextEditingController _nameController;
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
-  late TextEditingController _passwordAgainController;
   late GlobalKey<FormState> _formKey;
 
   @override
@@ -23,7 +26,6 @@ class _RegisterViewState extends State<RegisterView> {
     _nameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
-    _passwordAgainController = TextEditingController();
     _formKey = GlobalKey<FormState>();
 
     super.initState();
@@ -34,61 +36,52 @@ class _RegisterViewState extends State<RegisterView> {
     _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _passwordAgainController.dispose();
     super.dispose();
   }
 
   AuthService authService = AuthService();
+
+  void changePasswordObscure() {
+    setState(() {
+      passwordObscure = !passwordObscure;
+    });
+  }
+
+  bool passwordObscure = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              controller: _nameController,
-            ),
-            TextFormField(
-              controller: _emailController,
-            ),
-            TextFormField(
-              controller: _passwordController,
-            ),
-            TextFormField(
-              controller: _passwordAgainController,
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                if (_formKey.currentState!.validate()) {
-                  print(_nameController.text);
-                  print(_emailController.text);
-                  print(_passwordController.text);
-                  print(_passwordAgainController.text);
-
-                  // await AuthService().createPerson("name", "email", "password");
-                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: "email7@gmail.com", password: "password");
-                  await FirebaseFirestore.instance
-                      .collection("Users")
-                      .doc("email")
-                      .set({
-                    "name": "suleyman",
-                    "email": "asdf",
-                  });
-                }
-              },
-              child: const Text("Register"),
-            ),
-            const Divider(),
-            TextButton(
-              onPressed: () {
-                AppRouterObject.appRouter.maybePop();
-              },
-              child: const Text("you have an account login"),
-            ),
-          ],
+        child: Padding(
+          padding: context.widgetPadding,
+          child: Column(
+            children: [
+              context.bigSizedBox,
+              const RegisterImage(),
+              context.bigSizedBox,
+              NameSurnameTextField(nameController: _nameController),
+              context.normalSizedBox,
+              RegisterEmailTextField(emailController: _emailController),
+              context.normalSizedBox,
+              PasswordTextField(
+                passwordController: _passwordController,
+                passwordObscure: passwordObscure,
+                onPressed: changePasswordObscure,
+              ),
+              context.normalSizedBox,
+              context.bigXSizedBox,
+              RegisterButton(
+                formKey: _formKey,
+                nameController: _nameController,
+                emailController: _emailController,
+                passwordController: _passwordController,
+              ),
+              const Spacer(),
+              const LoginNow(),
+            ],
+          ),
         ),
       ),
     );
