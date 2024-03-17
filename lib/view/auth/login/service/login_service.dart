@@ -63,4 +63,9 @@ class LoginService extends ILoginRepository {
   Future<GoogleSignInAccount?>? signOutGoogle() async {
     return await GoogleSignIn().signOut();
   }
+
+  bool isSignIn() {
+    final isSigned = authInstance.currentUser == null;
+    return isSigned;
+  }
 }

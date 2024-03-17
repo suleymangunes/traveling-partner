@@ -18,4 +18,5 @@ abstract class LocaleKeys {
   static const String problemTryAgain =
       'İşlem yapılırken beklenmedik bir hataya rastlandı. Lütfen tekrar deneyin.';
   static const String tryAgain = 'Tekrar Dene';
+  static const String signOut = 'Çıkış Yap';
 }
