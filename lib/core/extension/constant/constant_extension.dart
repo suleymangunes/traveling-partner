@@ -5,6 +5,7 @@ extension ConstantExtension on BuildContext {
   double get buttonHeight => 50;
   double get iconSize => 25;
   double get elevation => 5;
+  double get animationHeight => 90;
   double get buttonThemeHeight => Theme.of(this).buttonTheme.height;
 }
 

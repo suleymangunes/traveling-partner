@@ -14,4 +14,8 @@ abstract class LocaleKeys {
   static const String siginGoogle = 'Google İle Giriş Yap';
   static const String dontAccount = 'Hesabın yok mu? ';
   static const String registerNow = 'Hemen kaydol';
+  static const String thereisProblem = 'Bir hata oluştu!';
+  static const String problemTryAgain =
+      'İşlem yapılırken beklenmedik bir hataya rastlandı. Lütfen tekrar deneyin.';
+  static const String tryAgain = 'Tekrar Dene';
 }
