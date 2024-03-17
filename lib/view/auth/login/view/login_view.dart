@@ -40,6 +40,14 @@ class _LoginViewState extends State<LoginView> {
     super.dispose();
   }
 
+  void changePasswordObscure() {
+    setState(() {
+      passwordObscure = !passwordObscure;
+    });
+  }
+
+  bool passwordObscure = false;
+
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   @override
@@ -62,7 +70,10 @@ class _LoginViewState extends State<LoginView> {
                   isDense: true,
                   border: const OutlineInputBorder(),
                   hintText: "Eposta",
-                  prefixIcon: const Icon(Icons.mail_outline_rounded),
+                  prefixIcon: const Icon(
+                    Icons.mail_outline_rounded,
+                    size: 25,
+                  ),
                   errorStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: context.colorScheme.error,
                       ),
@@ -75,14 +86,27 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(height: context.height * 0.015),
               TextFormField(
                 controller: _passwordController,
+                obscureText: passwordObscure,
                 decoration: InputDecoration(
                   isDense: true,
                   border: const OutlineInputBorder(),
                   hintText: "Şifre",
-                  prefixIcon: const Icon(Icons.lock_outline_rounded),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline_rounded,
+                    size: 25,
+                  ),
                   errorStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: context.colorScheme.error,
                       ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      passwordObscure
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                      size: 25,
+                    ),
+                    onPressed: changePasswordObscure,
+                  ),
                 ),
                 style: context.titleMedium,
                 validator: (value) =>
