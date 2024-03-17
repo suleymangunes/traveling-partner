@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:traveling_partner/app.dart';
+import 'package:traveling_partner/product/dependency-injection/getit_login.dart';
 import 'package:traveling_partner/product/firebase/firebase_options.dart';
 import 'package:traveling_partner/product/dependency-injection/getit_firestore.dart';
 
@@ -26,6 +27,7 @@ class TravelingPartnerApp {
 
   void _initializeGetIt() {
     GetItFirestore.setup();
+    GetItLogin.setup();
   }
 
   void _runApp() {

@@ -19,13 +19,4 @@ class GetItFirestore {
     getIt.registerSingleton<LocationService>(
         LocationService(firestoreInstance: firestoreInstance));
   }
-
-  // static void setup() {
-  //   getIt
-  //     ..registerSingleton<LoginService>(LoginService(_dio))
-  //     ..registerSingleton<ForgotPasswordService>(ForgotPasswordService(_dio))
-  //     ..registerSingleton<ResetPasswordService>(ResetPasswordService(_dio))
-  //     ..registerSingleton<GoogleSignInService>(
-  //         GoogleSignInService(_googleSignIn, _dio));
-  // }
 }

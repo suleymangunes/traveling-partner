@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/view/auth/login/model/login_model.dart';
+import 'package:traveling_partner/view/auth/login/view-model/i_login_state.dart';
+import 'package:traveling_partner/view/auth/login/view-model/login_cubit.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({
@@ -17,30 +21,30 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: context.colorScheme.primary,
-        padding: context.buttonPadding,
-        minimumSize: context.buttonSized,
-      ),
-      onPressed: () async {
-        if (_formKey.currentState!.validate()) {
-          print(emailController.text);
-          print(passwordController.text);
-          // print(_emailController.text);
-          // print(_passwordController.text);
-          // print("basladi");
-          // await FirebaseAuth.instance.signInWithEmailAndPassword(
-          //     email: "email@gmail.com", password: "password");
-          // print("giri yapildi");
-          // await FirebaseAuth.instance.signOut();
-          // print("cikis yapildi");
-        }
+    return BlocConsumer<LoginCubit, ILoginState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        return ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.colorScheme.primary,
+            padding: context.buttonPadding,
+            minimumSize: context.buttonSized,
+          ),
+          onPressed: () async {
+            if (_formKey.currentState!.validate()) {
+              final loginModel = LoginModel(
+                email: emailController.text,
+                password: passwordController.text,
+              );
+              context.read<LoginCubit>().loginWithEmail(loginModel);
+            }
+          },
+          child: Text(
+            LocaleKeys.login,
+            style: context.titleLargeSpacingBg,
+          ),
+        );
       },
-      child: Text(
-        LocaleKeys.login,
-        style: context.titleLargeSpacingBg,
-      ),
     );
   }
 }
