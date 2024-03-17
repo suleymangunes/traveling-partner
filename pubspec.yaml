@@ -42,6 +42,9 @@ dependencies:
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
 
+  # animation
+  lottie: ^3.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,6 +61,7 @@ flutter:
 
   assets:
     - assets/fonts/
+    - assets/animation/
 
   fonts:
     - family: CabinRegular

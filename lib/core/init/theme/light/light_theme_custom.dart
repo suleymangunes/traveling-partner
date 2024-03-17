@@ -11,6 +11,7 @@ class LightThemeCustom {
       colorSchemeSeed: ColorSchemeCommon.instance!.japaneseLaurel,
       appBarTheme: const AppBarTheme(
         toolbarHeight: kToolbarHeight * 1.4,
+        centerTitle: true,
       ),
       textTheme: TextTheme(
         headlineSmall: TextStyle(
