@@ -17,6 +17,7 @@ extension TextExtension on BuildContext {
   TextStyle get titleSmall => textTheme.titleSmall!;
 
   TextStyle get bodyLarge => textTheme.bodyLarge!;
+
   TextStyle get bodyLargeBold => textTheme.bodyLarge!.copyWith(
         fontWeight: FontWeight.bold,
       );
@@ -29,4 +30,12 @@ extension TextExtension on BuildContext {
         letterSpacing: 1.25,
         fontWeight: FontWeight.w600,
       );
+  TextStyle? get errorStyle =>
+      textTheme.titleSmall?.copyWith(color: colorScheme.error);
+
+  TextStyle get titleLargeSpacingBg => textTheme.titleLarge!
+      .copyWith(color: colorScheme.background, letterSpacing: 1.5);
+
+  TextStyle get titleMediumSpacing =>
+      textTheme.titleMedium!.copyWith(letterSpacing: 1.5);
 }

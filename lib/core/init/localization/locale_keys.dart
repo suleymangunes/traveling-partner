@@ -7,4 +7,11 @@ abstract class LocaleKeys {
   static const String validValue = 'Geçerli bir değer girin';
   static const String validEmail = 'Geçerli bir eposta adresi girin';
   static const String validPassword = 'Geçerli bir şifre girin';
+  static const String email = 'Eposta';
+  static const String password = 'Şifre';
+  static const String login = 'Giriş Yap';
+  static const String or = 'Ya da';
+  static const String siginGoogle = 'Google İle Giriş Yap';
+  static const String dontAccount = 'Hesabın yok mu? ';
+  static const String registerNow = 'Hemen kaydol';
 }
