@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class PlacesText extends StatelessWidget {
   const PlacesText({
@@ -10,7 +10,7 @@ class PlacesText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      LocaleKeys.places,
+      LocaleKeys.destinationPlaces,
       style: context.spacingBoldTitleMedium,
     );
   }

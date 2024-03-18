@@ -4,9 +4,9 @@ import 'package:traveling_partner/core/components/alert/error_animated_dialog.da
 import 'package:traveling_partner/core/components/alert/loading_animated_dialog.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/product/state-enum/state_enum.dart';
 import 'package:traveling_partner/view/auth/register/model/register_model.dart';
 import 'package:traveling_partner/view/auth/register/view-model/i_register_cubit.dart';
@@ -76,7 +76,7 @@ class RegisterButton extends StatelessWidget {
             }
           },
           child: Text(
-            LocaleKeys.signUp,
+            LocaleKeys.buttondSignUp,
             style: context.titleLargeSpacingBg,
           ),
         );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/components/appbar/app_bar_without_back.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class BaseHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseHomeAppBar({super.key, this.autoLeading});
@@ -9,7 +9,7 @@ class BaseHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBarWithoutBack(
-      title: LocaleKeys.travelingPartner,
+      title: LocaleKeys.appTravelingPartner,
       autoLeading: autoLeading,
     );
   }

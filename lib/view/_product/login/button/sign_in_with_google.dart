@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:traveling_partner/core/constants/svg/svg_enum.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/auth/login/service/login_service.dart';
 import 'package:traveling_partner/view/auth/login/view-model/get_it_login_instance.dart';
 
@@ -34,7 +34,7 @@ class SignInWithGoogle extends StatelessWidget with GetItLoginInstance {
           ),
           const Spacer(),
           Text(
-            LocaleKeys.siginGoogle,
+            LocaleKeys.buttondSiginGoogle,
             style: context.titleMediumSpacing,
           ),
           const Spacer(),

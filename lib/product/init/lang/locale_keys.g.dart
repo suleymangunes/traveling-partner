@@ -1,0 +1,55 @@
+// DO NOT EDIT. This is code generated via package:easyLocalization/generate.dart
+
+abstract class LocaleKeys {
+  static const appTravelingPartner = 'app.travelingPartner';
+  static const app = 'app';
+  static const alertUnexpectedError = 'alert.unexpectedError';
+  static const alertProblemTryAgain = 'alert.problemTryAgain';
+  static const alertValidValue = 'alert.validValue';
+  static const alertValidEmail = 'alert.validEmail';
+  static const alertValidPassword = 'alert.validPassword';
+  static const alertNotFound = 'alert.notFound';
+  static const alertThereisProblem = 'alert.thereisProblem';
+  static const alertValidName = 'alert.validName';
+  static const alert = 'alert';
+  static const buttonUpdate = 'button.update';
+  static const buttonCancel = 'button.cancel';
+  static const buttonLogin = 'button.login';
+  static const buttonRegisterNow = 'button.registerNow';
+  static const buttonTryAgain = 'button.tryAgain';
+  static const buttondSignOut = 'button.signOut';
+  static const buttondSiginGoogle = 'button.siginGoogle';
+  static const buttonLoginNow = 'button.loginNow';
+  static const buttondSignUp = 'button.signUp';
+  static const buttonWhosWithMe = 'button.whosWithMe';
+  static const buttonRegister = 'button.register';
+  static const buttonRegistered = 'button.registered';
+  static const button = 'button';
+  static const infoEmail = 'info.email';
+  static const infoPassword = 'info.password';
+  static const infoOr = 'info.or';
+  static const infoJustError = 'info.justError';
+  static const infoDontAccount = 'info.dontAccount';
+  static const infoHaveAccount = 'info.haveAccount';
+  static const infoNameSurname = 'info.nameSurname';
+  static const info = 'info';
+  static const destinationAbout = 'destination.about';
+  static const destinationPlaces = 'destination.places';
+  static const destinationPickTravelDate = 'destination.pickTravelDate';
+  static const destination = 'destination';
+  static const mailTravelPartnerRequest = 'mail.travelPartnerRequest';
+  static const mailHiIam = 'mail.hiIam';
+  static const mailBetwwen = 'mail.betwwen';
+  static const mailMakeTravel = 'mail.makeTravel';
+  static const mailTravelWithMe = 'mail.travelWithMe';
+  static const mail = 'mail';
+  static const themeTheme = 'theme.theme';
+  static const themePickTheme = 'theme.pickTheme';
+  static const themeDarkTheme = 'theme.darkTheme';
+  static const themeLightTheme = 'theme.lightTheme';
+  static const themedSystemTheme = 'theme.systemTheme';
+  static const theme = 'theme';
+  static const localizationLang = 'localization.lang';
+  static const localizationdSelectLang = 'localization.selectLang';
+  static const localization = 'localization';
+}

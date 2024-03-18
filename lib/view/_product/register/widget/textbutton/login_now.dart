@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class LoginNow extends StatelessWidget {
   const LoginNow({
@@ -19,11 +19,11 @@ class LoginNow extends StatelessWidget {
         children: [
           TextSpan(
             style: context.bodyLarge,
-            text: LocaleKeys.haveAccount,
+            text: LocaleKeys.infoHaveAccount,
           ),
           TextSpan(
             style: context.bodyLargeBold,
-            text: LocaleKeys.loginNow,
+            text: LocaleKeys.buttonLoginNow,
           ),
         ],
       )),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/components/dropdown/changer_listtie_with_dropdown.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_variables.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/_product/home/drawer/drawer_animation.dart';
 import 'package:traveling_partner/view/_product/home/drawer/drawer_text.dart';
 import 'package:traveling_partner/view/_product/home/drawer/sign_out_button.dart';
@@ -24,8 +25,8 @@ class BaseHomePageDrawer extends StatelessWidget {
             const ThemeChanger(),
             ChangerListtileWithDropdown(
               icon: const Icon(Icons.language_rounded),
-              title: "Uygulama Dili",
-              alertTitle: "Dil Seç",
+              title: LocaleKeys.localizationLang.tr(),
+              alertTitle: LocaleKeys.localizationdSelectLang.tr(),
               child: changeLocalWithDropdown(context),
             ),
             const Spacer(),

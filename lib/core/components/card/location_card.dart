@@ -1,11 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_common_keys.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class LocationCard extends StatelessWidget {
@@ -44,22 +45,22 @@ class LocationCard extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      location.name ?? LocaleKeys.notFound,
+                      location.name ?? LocaleKeys.alertNotFound.tr(),
                       style: context.spacingBoldTitleLarge,
                     ),
                     context.tinySSizedBox,
                     Text(
-                      location.definition ?? LocaleKeys.notFound,
+                      location.definition ?? LocaleKeys.alertNotFound.tr(),
                       style: context.titleSmall,
                     ),
                     context.tinySizedBox,
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(location.city ?? LocaleKeys.notFound,
+                        Text(location.city ?? LocaleKeys.alertNotFound.tr(),
                             style: context.bodyLarge),
                         Text(", ", style: context.bodyLarge),
-                        Text(location.country ?? LocaleKeys.notFound,
+                        Text(location.country ?? LocaleKeys.alertNotFound.tr(),
                             style: context.bodyLarge),
                       ],
                     ),

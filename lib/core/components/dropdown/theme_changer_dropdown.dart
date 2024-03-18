@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/core/constants/theme/theme_constants.dart';
@@ -5,8 +6,8 @@ import 'package:traveling_partner/core/extension/constant/constant_extension.dar
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/cubit/radio/radio_cubit.dart';
 import 'package:traveling_partner/core/init/cubit/theme/theme_cubit.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class ThemeChangeDropdown extends StatelessWidget {
   const ThemeChangeDropdown({super.key});
@@ -41,7 +42,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         },
       ),
       title: Text(
-        LocaleKeys.darkTheme,
+        LocaleKeys.themeDarkTheme.tr(),
         style: context.titleMedium,
       ),
     );
@@ -57,7 +58,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         },
       ),
       title: Text(
-        LocaleKeys.lightTheme,
+        LocaleKeys.themeLightTheme.tr(),
         style: context.titleMedium,
       ),
     );
@@ -73,7 +74,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         },
       ),
       title: Text(
-        LocaleKeys.systemTheme,
+        LocaleKeys.themedSystemTheme.tr(),
         style: context.titleMedium,
       ),
     );
@@ -112,7 +113,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         }
       },
       child: Text(
-        LocaleKeys.update,
+        LocaleKeys.buttonUpdate.tr(),
         style: context.titleLarge,
       ),
     );
@@ -128,7 +129,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         AppRouterObject.appRouter.maybePop();
       },
       child: Text(
-        LocaleKeys.cancel,
+        LocaleKeys.buttonCancel.tr(),
         style: context.titleLarge,
       ),
     );

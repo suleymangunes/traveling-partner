@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class DestinationName extends StatelessWidget {
@@ -14,7 +14,7 @@ class DestinationName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      locationModel.name ?? LocaleKeys.notFound,
+      locationModel.name ?? LocaleKeys.alertNotFound,
       style: context.spacingHeadlineSmallBold,
     );
   }

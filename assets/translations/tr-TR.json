@@ -1,3 +1,62 @@
 {
-    "nam": ""
+    "app" : {
+        "travelingPartner": "Gezgin Ortak"
+    },
+    "alert": {
+        "unexpectedError": "Beklenmeyen bir hata oluştu! Lütfen daha sonra tekrar deneyin.",
+        "problemTryAgain": "İşlem yapılırken beklenmedik bir hataya rastlandı. Lütfen tekrar deneyin.",
+        "validValue": "Geçerli bir değer girin",
+        "validEmail": "Geçerli bir eposta adresi girin",
+        "validPassword" : "Geçerli bir şifre girin",
+        "notFound" : "Veri bulunamadı",
+        "thereisProblem" : "Bir hata oluştu!",
+        "validName" : "Geçerli bir isim soyisim girin"
+    },
+    "button": {
+        "update": "Uygula",
+        "cancel": "İptal",
+        "login": "Giriş Yap",
+        "registerNow": "Hemen kaydol",
+        "tryAgain": "Tekrar Dene",
+        "signOut": "Çıkış Yap",
+        "siginGoogle": "Google İle Giriş Yap",
+        "loginNow": "Hemen giriş yap",
+        "signUp": "Kayıt ol",
+        "whosWithMe": "Kimler Benimle",
+        "register": "Kaydol",
+        "registered": "Kaydolundu"
+    },
+    "info": {
+        "email" : "Eposta",
+        "password" : "Şifre",
+        "or" : "Ya da",
+        "justError" : "Hata",
+        "dontAccount" : "Hesabın yok mu? ",
+        "haveAccount" : "Heabın var mı? ",
+        "nameSurname" : "İsim Soyisim"
+    },
+    "destination": {
+        "about": "Hakkında",
+        "places": "Gezilecek Yerler",
+        "pickTravelDate": "Seyahat Tarihini Seç"
+    },
+    "mail": {
+        "travelPartnerRequest":"Gezgin Ortağım olmak ister misiniz?",
+        "hiIam": "Merhaba, ben",
+        "betwwen": "tarihleri arasında",
+        "makeTravel": "konumuna seyahat edeceğim.",
+        "travelWithMe":"Benimle beraber seyahat ederek seyahatini daha eğlenceli hale getirmek ister misin?"
+    },
+    "theme": {
+        "theme": "Tema",
+        "pickTheme": "Tema Seç",
+        "darkTheme": "Karanlık Tema",
+        "lightTheme": "Aydınlık Tema",
+        "systemTheme": "Sistem Varsayılanı"
+    },
+    "localization": {
+        "lang": "Uygulama Dili",
+        "selectLang": "Dil Seç"
+    }
+    
 }

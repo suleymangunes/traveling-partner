@@ -1,7 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class OrWidget extends StatelessWidget {
   const OrWidget({
@@ -16,7 +17,7 @@ class OrWidget extends StatelessWidget {
         Padding(
           padding: context.buttonPadding,
           child: Text(
-            LocaleKeys.or,
+            LocaleKeys.infoOr.tr(),
             style: context.bodyLarge,
           ),
         ),

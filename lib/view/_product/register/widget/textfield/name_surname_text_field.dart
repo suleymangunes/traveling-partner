@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/extension/validator/string_validator.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class NameSurnameTextField extends StatelessWidget {
   const NameSurnameTextField({
@@ -19,7 +19,7 @@ class NameSurnameTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         border: const OutlineInputBorder(),
-        hintText: LocaleKeys.nameSurname,
+        hintText: LocaleKeys.infoNameSurname,
         prefixIcon: Icon(
           Icons.person_outline_rounded,
           size: context.iconSize,
@@ -27,7 +27,7 @@ class NameSurnameTextField extends StatelessWidget {
         errorStyle: context.errorStyle,
       ),
       style: context.titleMedium,
-      validator: (value) => value.validateEmpty(LocaleKeys.validName),
+      validator: (value) => value.validateEmpty(LocaleKeys.alertValidName),
     );
   }
 }

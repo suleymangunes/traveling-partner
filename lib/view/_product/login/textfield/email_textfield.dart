@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/extension/validator/email_validator.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
@@ -19,7 +19,7 @@ class EmailTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         border: const OutlineInputBorder(),
-        hintText: LocaleKeys.email,
+        hintText: LocaleKeys.infoEmail,
         prefixIcon: Icon(
           Icons.mail_outline_rounded,
           size: context.iconSize,
@@ -29,7 +29,7 @@ class EmailTextField extends StatelessWidget {
       style: context.titleMedium,
       validator: (value) => (value != null && value.isValidEmail())
           ? null
-          : LocaleKeys.validEmail,
+          : LocaleKeys.alertValidEmail,
     );
   }
 }

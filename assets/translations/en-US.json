@@ -1,3 +1,62 @@
 {
-    "nam": ""
+    "app" : {
+        "travelingPartner": "Traveling Partner"
+    },
+    "alert": {
+        "unexpectedError": "An unexpected error occurred! Please try again later.",
+        "problemTryAgain": "An unexpected error was encountered while processing. Please try again.",
+        "validValue": "Enter a valid value",
+        "validEmail": "Enter a valid email address",
+        "validPassword" : "Enter a valid password",
+        "notFound" : "Data not found",
+        "thereisProblem" : "An error has occurred!",
+        "validName" : "Enter a valid name"
+    },
+    "button": {
+        "update": "Apply",
+        "cancel": "Cancel",
+        "login": "Login",
+        "registerNow": "Register now",
+        "tryAgain": "Try Again",
+        "signOut": "Sign Out",
+        "siginGoogle": "Sign in with Google",
+        "loginNow": "Login now",
+        "signUp": "Sign up",
+        "whosWithMe": "Who's With Me",
+        "register": "Register",
+        "registered": "Registered"
+    },
+    "info": {
+        "email" : "Email",
+        "password" : "Password",
+        "or" : "Or",
+        "justError" : "Error",
+        "dontAccount" : "Don't have an account? ",
+        "haveAccount" : "Do you have an account? ",
+        "nameSurname" : "Name Surname"
+    },
+    "destination": {
+        "about": "About",
+        "places": "Places to Visit",
+        "pickTravelDate": "Pick Travel Date"
+    },
+    "mail": {
+        "travelPartnerRequest":"Would you like to be my Traveler Partner?",
+        "hiIam": "Hi, I am",
+        "betwwen": "between dates",
+        "makeTravel": "I will travel to location.",
+        "travelWithMe":"Do you want to make your trip more fun by traveling with me?"
+    },
+    "theme": {
+        "theme": "Theme",
+        "pickTheme": "Pick Theme",
+        "darkTheme": "Dark Theme",
+        "lightTheme": "Light Theme",
+        "systemTheme": "System Default"
+    },
+    "localization": {
+        "lang": "App Language",
+        "selectLang": "Select Language"
+    }
+    
 }

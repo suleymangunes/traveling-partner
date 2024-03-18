@@ -1,12 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/core/components/alert/error_animated_dialog.dart';
 import 'package:traveling_partner/core/components/alert/loading_animated_dialog.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/product/state-enum/state_enum.dart';
 import 'package:traveling_partner/view/auth/login/model/login_model.dart';
 import 'package:traveling_partner/view/auth/login/view-model/i_login_state.dart';
@@ -59,16 +60,18 @@ class LoginButton extends StatelessWidget {
             minimumSize: context.buttonSized,
           ),
           onPressed: () async {
-            if (_formKey.currentState!.validate()) {
-              final loginModel = LoginModel(
-                email: emailController.text,
-                password: passwordController.text,
-              );
-              context.read<LoginCubit>().loginWithEmail(loginModel);
-            }
+            // if (_formKey.currentState!.validate()) {
+            //   final loginModel = LoginModel(
+            //     email: emailController.text,
+            //     password: passwordController.text,
+            //   );
+            //   context.read<LoginCubit>().loginWithEmail(loginModel);
+            // }
+            print(context.locale);
+            print(LocaleKeys.buttonLogin.tr());
           },
           child: Text(
-            LocaleKeys.login,
+            LocaleKeys.buttonLogin.tr(),
             style: context.titleLargeSpacingBg,
           ),
         );

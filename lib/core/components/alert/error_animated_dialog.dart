@@ -1,11 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:traveling_partner/core/constants/animation/animation_enum.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class ErrorAnimatedDialog extends StatelessWidget {
   const ErrorAnimatedDialog({
@@ -26,13 +27,13 @@ class ErrorAnimatedDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            LocaleKeys.thereisProblem,
+            LocaleKeys.alertThereisProblem.tr(),
             textAlign: TextAlign.center,
             style: context.titleLarge,
           ),
           context.smallSizedBox,
           Text(
-            LocaleKeys.problemTryAgain,
+            LocaleKeys.alertProblemTryAgain.tr(),
             textAlign: TextAlign.center,
             style: context.titleSmall,
           ),
@@ -48,7 +49,7 @@ class ErrorAnimatedDialog extends StatelessWidget {
             AppRouterObject.appRouter.maybePop();
           },
           child: Text(
-            LocaleKeys.tryAgain,
+            LocaleKeys.buttonTryAgain.tr(),
             style: context.titleLargeSpacingBg,
           ),
         ),

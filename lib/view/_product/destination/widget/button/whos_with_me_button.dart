@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
-import 'package:traveling_partner/core/init/localization/locale_keys.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
+import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class WhosWithMeButton extends StatelessWidget {
@@ -27,7 +27,7 @@ class WhosWithMeButton extends StatelessWidget {
             .push(AttendeesRoute(locationModel: locationModel));
       },
       child: Text(
-        LocaleKeys.whosWithMe,
+        LocaleKeys.buttonWhosWithMe,
         style: context.titleLargeSpacingBg,
       ),
     );
