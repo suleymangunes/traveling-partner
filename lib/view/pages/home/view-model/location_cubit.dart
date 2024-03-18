@@ -12,7 +12,9 @@ class LocationCubit extends Cubit<ILocationState> {
   Future<void> getLocations() async {
     try {
       emit(LocationLoadingState());
-      await Future.delayed(const Duration(seconds: 3));
+
+      /// TODO acarsin burayi
+      // await Future.delayed(const Duration(seconds: 3));
       final response = await locationService.fetchLocations();
 
       emit(LocationCompletedState(response));

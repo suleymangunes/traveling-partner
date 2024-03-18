@@ -8,6 +8,8 @@ extension ConstantExtension on BuildContext {
   double get elevation => 5;
   double get animationHeight => 90;
   double get buttonThemeHeight => Theme.of(this).buttonTheme.height;
+  double get datePickerHeiht => 450;
+  double get datePickerWidth => 400;
 }
 
 extension ShadowExtension on BuildContext {
@@ -33,4 +35,5 @@ extension WidgetExtension on BuildContext {
 
 extension SizeExtensions on BuildContext {
   Size get buttonSized => Size(width, Theme.of(this).buttonTheme.height);
+  Size get alertButtonSize => Size(150, buttonHeight);
 }

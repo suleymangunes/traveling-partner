@@ -27,4 +27,7 @@ abstract class LocaleKeys {
   static const String about = 'Hakkında';
   static const String places = 'Gezilecek Yerler';
   static const String whosWithMe = 'Kimler Benimle';
+  static const String pickTravelDate = 'Seyahat Tarihini Seç';
+  static const String register = 'Kaydol';
+  static const String registered = 'Kaydolundu';
 }

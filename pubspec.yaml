@@ -18,7 +18,10 @@ dependencies:
   cloud_firestore: ^4.15.9
 
   # app icons
-  cupertino_icons: ^1.0.6  
+  cupertino_icons: ^1.0.6 
+
+  # date picker 
+  date_picker_plus: ^3.0.0
 
   # object equality
   equatable: ^2.0.5

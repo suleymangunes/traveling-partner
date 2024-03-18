@@ -34,19 +34,17 @@ Map<String, dynamic> _$LocationModelToJson(LocationModel instance) =>
     };
 
 Users _$UsersFromJson(Map<String, dynamic> json) => Users(
-      startingDate: json['startingDate'] == null
-          ? null
-          : DateTime.parse(json['startingDate'] as String),
+      startingDate: DateTime.fromMillisecondsSinceEpoch(
+          json['starting_date'].seconds * 1000),
       name: json['name'] as String?,
-      endingDate: json['endingDate'] == null
-          ? null
-          : DateTime.parse(json['endingDate'] as String),
+      endingDate: DateTime.fromMillisecondsSinceEpoch(
+          json['ending_date'].seconds * 1000),
       email: json['email'] as String?,
     );
 
 Map<String, dynamic> _$UsersToJson(Users instance) => <String, dynamic>{
-      'startingDate': instance.startingDate?.toIso8601String(),
+      'startingDate': instance.startingDate,
       'name': instance.name,
-      'endingDate': instance.endingDate?.toIso8601String(),
+      'endingDate': instance.endingDate,
       'email': instance.email,
     };
