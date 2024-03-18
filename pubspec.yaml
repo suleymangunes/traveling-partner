@@ -67,6 +67,18 @@ dev_dependencies:
   # linter
   flutter_lints: ^3.0.0
 
+  # splash screen
+  flutter_native_splash: ^2.4.0
+
+# Splash Screen
+flutter_native_splash:
+  image: assets/splash/splash.png
+  image_dark: assets/splash/splash.png
+  color: "#009000"
+  color_dark: "#009000"
+
+  web: false
+
 flutter:
 
   uses-material-design: true
@@ -75,6 +87,7 @@ flutter:
     - assets/fonts/
     - assets/animation/
     - assets/svg/
+    - assets/splash/
 
   fonts:
     - family: CabinRegular
