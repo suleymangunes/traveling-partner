@@ -15,7 +15,7 @@ class LocationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.cardHeight,
+      height: context.cardHeight * 1.03,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: context.cardBorderRadius,

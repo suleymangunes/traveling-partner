@@ -10,9 +10,11 @@ class UserCard extends StatelessWidget {
   const UserCard({
     super.key,
     required this.user,
+    required this.location,
   });
 
   final Users user;
+  final LocationModel location;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,10 @@ class UserCard extends StatelessWidget {
             context.listTileSizedBox,
             UserInfo(user: user),
             const Spacer(),
-            GetContactButton(user: user)
+            GetContactButton(
+              user: user,
+              location: location,
+            )
           ],
         ),
       ),

@@ -31,4 +31,12 @@ abstract class LocaleKeys {
   static const String register = 'Kaydol';
   static const String registered = 'Kaydolundu';
   static const String justError = 'Hata';
+  static const String travelPartnerRequest =
+      'Gezgin Ortağım olmak ister misiniz?';
+
+  static const String hiIam = 'Merhaba, ben';
+  static const String betwwen = 'tarihleri arasında';
+  static const String makeTravel = 'konumuna seyahat edeceğim.';
+  static const String travelWithMe =
+      'Benimle beraber seyahat ederek seyahatini daha eğlenceli hale getirmek ister misin?';
 }

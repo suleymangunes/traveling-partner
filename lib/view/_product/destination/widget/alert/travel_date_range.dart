@@ -32,6 +32,7 @@ class _TravelDateRangeState extends State<TravelDateRange>
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      contentPadding: EdgeInsets.zero,
       title: const TravelDatePickTitle(),
       content: SizedBox(
         height: context.datePickerHeiht,

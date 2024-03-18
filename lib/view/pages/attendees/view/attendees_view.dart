@@ -15,7 +15,10 @@ class AttendeesView extends StatelessWidget {
         itemCount: locationModel.users?.length,
         itemBuilder: (BuildContext context, int index) {
           final user = locationModel.users![index];
-          return UserCard(user: user);
+          return UserCard(
+            user: user,
+            location: locationModel,
+          );
         },
       ),
     );
