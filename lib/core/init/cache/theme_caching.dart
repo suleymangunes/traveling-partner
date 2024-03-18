@@ -22,7 +22,8 @@ class ThemeCaching {
   /// Must be called before accessing any other methods.
   static Future<void> init() async {
     await Hive.initFlutter();
-    await Hive.openBox<String>(ThemeCachingnEnum.theme.name);
+    // ignore: inference_failure_on_function_invocation
+    await Hive.openBox(ThemeCachingnEnum.theme.name);
   }
 
   /// Retrieves the initial theme mode.
