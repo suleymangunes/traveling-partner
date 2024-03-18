@@ -2,6 +2,20 @@
 
 Find out who else will be traveling to your destination. Get in touch and make your trip more fun.
 
+## Application Features
+
+- Sign up and login with email.
+- Register and login with Google.
+- Learn about places to travel and get information about places to visit.
+- Share your travel destination.
+- Record when you will arrive at your travel destination.
+- Find out who else will be traveling there with you.
+- Connect with others and diversify your trip.
+- Use your favorite theme with light and dark theme options.
+- Add dimension to app usage with multiple language options.
+
+## Application Structure
+
 ### Architecture
 
 - Mvvm
