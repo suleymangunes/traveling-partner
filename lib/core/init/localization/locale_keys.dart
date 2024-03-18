@@ -30,4 +30,5 @@ abstract class LocaleKeys {
   static const String pickTravelDate = 'Seyahat Tarihini Seç';
   static const String register = 'Kaydol';
   static const String registered = 'Kaydolundu';
+  static const String justError = 'Hata';
 }

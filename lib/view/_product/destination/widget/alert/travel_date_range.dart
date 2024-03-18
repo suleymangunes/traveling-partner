@@ -1,12 +1,17 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_picker_plus/date_picker_plus.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/localization/locale_keys.dart';
-import 'package:traveling_partner/product/database-collections/database_collection_enum.dart';
-import 'package:traveling_partner/view/pages/destination/service/travel_date_service.dart';
+import 'package:traveling_partner/product/state-enum/state_enum.dart';
+import 'package:traveling_partner/view/_product/destination/widget/button/destination_completed_button.dart';
+import 'package:traveling_partner/view/_product/destination/widget/button/destination_loading_button.dart';
+import 'package:traveling_partner/view/_product/destination/widget/button/destionation_error_button.dart';
+import 'package:traveling_partner/view/_product/destination/widget/text/travel_date_pick_title.dart';
+import 'package:traveling_partner/view/pages/destination/view-model/getit_travel_date_instance.dart';
+import 'package:traveling_partner/view/pages/destination/view-model/i_travel_date_state.dart';
+import 'package:traveling_partner/view/pages/destination/view-model/travel_date_cubit.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
 class TravelDateRange extends StatefulWidget {
@@ -20,17 +25,14 @@ class TravelDateRange extends StatefulWidget {
   State<TravelDateRange> createState() => _TravelDateRangeState();
 }
 
-class _TravelDateRangeState extends State<TravelDateRange> {
+class _TravelDateRangeState extends State<TravelDateRange>
+    with GetItTravelDateInstance {
   DateTimeRange? dateTimeRange;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
-        LocaleKeys.pickTravelDate,
-        textAlign: TextAlign.center,
-        style: context.spacingHeadlineSmall,
-      ),
+      title: const TravelDatePickTitle(),
       content: SizedBox(
         height: context.datePickerHeiht,
         width: context.datePickerWidth,
@@ -48,63 +50,46 @@ class _TravelDateRangeState extends State<TravelDateRange> {
       ),
       actionsAlignment: MainAxisAlignment.center,
       actions: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: context.colorScheme.primary,
-            padding: context.buttonPadding,
-            minimumSize: context.alertButtonSize,
+        BlocProvider(
+          create: (context) => TravelDateCubit(
+            travelDateService: travelDateService(),
           ),
-          onPressed: () async {
-            final user = FirebaseAuth.instance.currentUser;
-            final name = user?.displayName;
-            final email = user?.email;
-
-            var locations = await FirebaseFirestore.instance
-                .collection(DatabaseCollectionEnum.locations.name)
-                .get();
-
-            String? id;
-            for (var i in locations.docs) {
-              if (i.data()["name"] == widget.locationModel.name) {
-                id = i.id;
-                break;
+          child: BlocBuilder<TravelDateCubit, ITravelDateState>(
+            builder: (context, state) {
+              switch (state.status) {
+                case StateEnum.initial:
+                  return _destinationInitialButton(context);
+                case StateEnum.loading:
+                  return const DestinationLoadingButton();
+                case StateEnum.completed:
+                  return const DestinationCompletedButton();
+                case StateEnum.error:
+                  return const DestinationErrorButton();
               }
-            }
-
-            Map<String, dynamic> addedMap = {
-              "users": [
-                {
-                  "name": name,
-                  "email": email,
-                  "starting_date": Timestamp.fromMillisecondsSinceEpoch(
-                      dateTimeRange?.start.millisecondsSinceEpoch as int),
-                  "ending_date": Timestamp.fromMillisecondsSinceEpoch(
-                      dateTimeRange?.end.millisecondsSinceEpoch as int),
-                }
-              ]
-            };
-
-            for (var i in widget.locationModel.users!) {
-              (addedMap["users"] as List).add({
-                "name": i.name,
-                "email": i.email,
-                "starting_date": Timestamp.fromMillisecondsSinceEpoch(
-                    i.startingDate?.millisecondsSinceEpoch as int),
-                "ending_date": Timestamp.fromMillisecondsSinceEpoch(
-                    i.endingDate?.millisecondsSinceEpoch as int),
-              });
-            }
-
-            await TravelDateService(
-                    firestoreInstance: FirebaseFirestore.instance)
-                .setTravelDate(id: id, addedMap: addedMap);
-          },
-          child: Text(
-            LocaleKeys.register,
-            style: context.titleLargeSpacingBg,
+            },
           ),
         ),
       ],
+    );
+  }
+
+  ElevatedButton _destinationInitialButton(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: context.colorScheme.primary,
+        padding: context.buttonPadding,
+        minimumSize: context.alertButtonSize,
+      ),
+      onPressed: () {
+        context.read<TravelDateCubit>().pickTravelDate(
+              dateTimeRange: dateTimeRange,
+              locationModel: widget.locationModel,
+            );
+      },
+      child: Text(
+        LocaleKeys.register,
+        style: context.titleLargeSpacingBg,
+      ),
     );
   }
 }

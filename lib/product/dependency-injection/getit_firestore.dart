@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
+import 'package:traveling_partner/view/pages/destination/service/travel_date_service.dart';
 import 'package:traveling_partner/view/pages/home/service/location_service.dart';
 
 class GetItFirestore {
@@ -18,5 +19,8 @@ class GetItFirestore {
   static void setup() {
     getIt.registerSingleton<LocationService>(
         LocationService(firestoreInstance: firestoreInstance));
+
+    getIt.registerSingleton<TravelDateService>(
+        TravelDateService(firestoreInstance: firestoreInstance));
   }
 }
