@@ -27,6 +27,7 @@ extension SizedboxExtensionHeight on BuildContext {
   SizedBox get bigSizedBox => SizedBox(height: height * 0.1);
   SizedBox get normalSizedBox => SizedBox(height: height * 0.015);
   SizedBox get bigXSizedBox => SizedBox(height: height * 0.02);
+  SizedBox get listTileSizedBox => SizedBox(width: width * 0.04);
 }
 
 extension PaddingExtension on BuildContext {

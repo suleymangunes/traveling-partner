@@ -2,6 +2,7 @@ enum SvgEnum {
   traveling('traveling'),
   gooogle('google'),
   register('register'),
+  user('user'),
   ;
 
   const SvgEnum(this.value);

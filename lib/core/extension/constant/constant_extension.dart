@@ -5,17 +5,19 @@ extension ConstantExtension on BuildContext {
   double get buttonHeight => 50;
   double get bigIconSize => 45;
   double get iconSize => 25;
+  double get mediumIconSize => 30;
   double get elevation => 5;
   double get animationHeight => 90;
   double get buttonThemeHeight => Theme.of(this).buttonTheme.height;
   double get datePickerHeiht => 450;
   double get datePickerWidth => 400;
+  double get listTileBigImageSize => 40;
 }
 
 extension ShadowExtension on BuildContext {
   double get cardShadow => 10;
-  double get iconLeftSpace => 10;
-  double get iconTopSpace => 30;
+  double get iconLeftSpace => 11;
+  double get iconTopSpace => 47;
 }
 
 extension WidgetExtension on BuildContext {
@@ -31,6 +33,11 @@ extension WidgetExtension on BuildContext {
       const EdgeInsets.symmetric(vertical: 10, horizontal: 20);
 
   EdgeInsets get iconBgPadding => const EdgeInsets.all(4.0);
+
+  EdgeInsets get attendeesCardMargin =>
+      const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
+
+  EdgeInsets get attendeesCardPadding => const EdgeInsets.all(18.0);
 }
 
 extension SizeExtensions on BuildContext {

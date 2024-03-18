@@ -47,9 +47,15 @@ extension TextExtension on BuildContext {
   TextStyle get titleLargeSpacingBg => textTheme.titleLarge!
       .copyWith(color: colorScheme.background, letterSpacing: 1.5);
 
+  TextStyle get titleSmallSpacingBg => textTheme.titleSmall!
+      .copyWith(color: colorScheme.background, letterSpacing: 1);
+
   TextStyle get titleMediumSpacing =>
       textTheme.titleMedium!.copyWith(letterSpacing: 1.5);
 
   TextStyle get titleLargePrimary =>
       textTheme.titleLarge!.copyWith(color: colorScheme.primary);
+
+  TextStyle get bodyLargeOutlined =>
+      textTheme.bodyLarge!.copyWith(color: colorScheme.outline);
 }
