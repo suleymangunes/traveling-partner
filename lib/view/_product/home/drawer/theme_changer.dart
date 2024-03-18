@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/components/dropdown/changer_listtie_with_dropdown.dart';
 import 'package:traveling_partner/core/components/dropdown/theme_changer_dropdown.dart';
@@ -12,8 +13,8 @@ class ThemeChanger extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangerListtileWithDropdown(
       icon: const Icon(Icons.wb_twilight_rounded),
-      title: LocaleKeys.themeTheme,
-      alertTitle: LocaleKeys.themePickTheme,
+      title: LocaleKeys.themeTheme.tr(),
+      alertTitle: LocaleKeys.themePickTheme.tr(),
       child: const ThemeChangeDropdown(),
     );
   }

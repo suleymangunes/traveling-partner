@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -19,7 +20,7 @@ class EmailTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         border: const OutlineInputBorder(),
-        hintText: LocaleKeys.infoEmail,
+        hintText: LocaleKeys.infoEmail.tr(),
         prefixIcon: Icon(
           Icons.mail_outline_rounded,
           size: context.iconSize,
@@ -29,7 +30,7 @@ class EmailTextField extends StatelessWidget {
       style: context.titleMedium,
       validator: (value) => (value != null && value.isValidEmail())
           ? null
-          : LocaleKeys.alertValidEmail,
+          : LocaleKeys.alertValidEmail.tr(),
     );
   }
 }

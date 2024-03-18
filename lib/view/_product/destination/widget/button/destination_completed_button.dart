@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -21,7 +22,7 @@ class DestinationCompletedButton extends StatelessWidget {
         AppRouterObject.appRouter.maybePop();
       },
       child: Text(
-        LocaleKeys.buttonRegistered,
+        LocaleKeys.buttonRegistered.tr(),
         style: context.titleLargeSpacingBg,
       ),
     );

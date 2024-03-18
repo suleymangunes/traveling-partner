@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
@@ -27,7 +28,7 @@ class WhosWithMeButton extends StatelessWidget {
             .push(AttendeesRoute(locationModel: locationModel));
       },
       child: Text(
-        LocaleKeys.buttonWhosWithMe,
+        LocaleKeys.buttonWhosWithMe.tr(),
         style: context.titleLargeSpacingBg,
       ),
     );

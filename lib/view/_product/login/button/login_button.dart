@@ -60,15 +60,13 @@ class LoginButton extends StatelessWidget {
             minimumSize: context.buttonSized,
           ),
           onPressed: () async {
-            // if (_formKey.currentState!.validate()) {
-            //   final loginModel = LoginModel(
-            //     email: emailController.text,
-            //     password: passwordController.text,
-            //   );
-            //   context.read<LoginCubit>().loginWithEmail(loginModel);
-            // }
-            print(context.locale);
-            print(LocaleKeys.buttonLogin.tr());
+            if (_formKey.currentState!.validate()) {
+              final loginModel = LoginModel(
+                email: emailController.text,
+                password: passwordController.text,
+              );
+              context.read<LoginCubit>().loginWithEmail(loginModel);
+            }
           },
           child: Text(
             LocaleKeys.buttonLogin.tr(),

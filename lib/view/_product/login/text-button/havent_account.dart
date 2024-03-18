@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
@@ -20,11 +21,11 @@ class HaventAccount extends StatelessWidget {
         children: [
           TextSpan(
             style: context.bodyLarge,
-            text: LocaleKeys.infoDontAccount,
+            text: LocaleKeys.infoDontAccount.tr(),
           ),
           TextSpan(
             style: context.bodyLargeBold,
-            text: LocaleKeys.buttonRegisterNow,
+            text: LocaleKeys.buttonRegisterNow.tr(),
           ),
         ],
       )),

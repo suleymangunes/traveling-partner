@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -18,7 +19,7 @@ class DestinationErrorButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: Text(
-        LocaleKeys.infoJustError,
+        LocaleKeys.infoJustError.tr(),
         style: context.titleLargeSpacingBg,
       ),
     );

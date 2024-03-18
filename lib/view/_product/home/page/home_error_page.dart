@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -17,7 +18,7 @@ class HomeErrorPage extends StatelessWidget {
         Padding(
           padding: context.normalWidgetPadding,
           child: Text(
-            LocaleKeys.alertUnexpectedError,
+            LocaleKeys.alertUnexpectedError.tr(),
             textAlign: TextAlign.center,
             style: context.titleLarge,
           ),

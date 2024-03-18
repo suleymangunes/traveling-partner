@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
@@ -19,11 +20,11 @@ class LoginNow extends StatelessWidget {
         children: [
           TextSpan(
             style: context.bodyLarge,
-            text: LocaleKeys.infoHaveAccount,
+            text: LocaleKeys.infoHaveAccount.tr(),
           ),
           TextSpan(
             style: context.bodyLargeBold,
-            text: LocaleKeys.buttonLoginNow,
+            text: LocaleKeys.buttonLoginNow.tr(),
           ),
         ],
       )),

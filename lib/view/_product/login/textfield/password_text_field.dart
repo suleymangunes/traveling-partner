@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -24,7 +25,7 @@ class PasswordTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         border: const OutlineInputBorder(),
-        hintText: LocaleKeys.infoPassword,
+        hintText: LocaleKeys.infoPassword.tr(),
         prefixIcon: Icon(
           Icons.lock_outline_rounded,
           size: context.iconSize,
@@ -42,7 +43,9 @@ class PasswordTextField extends StatelessWidget {
         ),
       ),
       style: context.titleMedium,
-      validator: (value) => value.validateEmpty(LocaleKeys.alertValidPassword),
+      validator: (value) => value.validateEmpty(
+        LocaleKeys.alertValidPassword.tr(),
+      ),
     );
   }
 }

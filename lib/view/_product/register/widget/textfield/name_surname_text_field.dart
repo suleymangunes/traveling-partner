@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
@@ -19,7 +20,7 @@ class NameSurnameTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         border: const OutlineInputBorder(),
-        hintText: LocaleKeys.infoNameSurname,
+        hintText: LocaleKeys.infoNameSurname.tr(),
         prefixIcon: Icon(
           Icons.person_outline_rounded,
           size: context.iconSize,
@@ -27,7 +28,7 @@ class NameSurnameTextField extends StatelessWidget {
         errorStyle: context.errorStyle,
       ),
       style: context.titleMedium,
-      validator: (value) => value.validateEmpty(LocaleKeys.alertValidName),
+      validator: (value) => value.validateEmpty(LocaleKeys.alertValidName.tr()),
     );
   }
 }
