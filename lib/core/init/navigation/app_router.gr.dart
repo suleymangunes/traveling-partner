@@ -27,9 +27,13 @@ abstract class $AppRouter extends _i6.RootStackRouter {
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
     AttendeesRoute.name: (routeData) {
+      final args = routeData.argsAs<AttendeesRouteArgs>();
       return _i6.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.AttendeesPage(),
+        child: _i1.AttendeesPage(
+          key: args.key,
+          locationModel: args.locationModel,
+        ),
       );
     },
     DestinationRoute.name: (routeData) {
@@ -65,16 +69,40 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
 /// generated route for
 /// [_i1.AttendeesPage]
-class AttendeesRoute extends _i6.PageRouteInfo<void> {
-  const AttendeesRoute({List<_i6.PageRouteInfo>? children})
-      : super(
+class AttendeesRoute extends _i6.PageRouteInfo<AttendeesRouteArgs> {
+  AttendeesRoute({
+    _i7.Key? key,
+    required _i8.LocationModel locationModel,
+    List<_i6.PageRouteInfo>? children,
+  }) : super(
           AttendeesRoute.name,
+          args: AttendeesRouteArgs(
+            key: key,
+            locationModel: locationModel,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'AttendeesRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i6.PageInfo<AttendeesRouteArgs> page =
+      _i6.PageInfo<AttendeesRouteArgs>(name);
+}
+
+class AttendeesRouteArgs {
+  const AttendeesRouteArgs({
+    this.key,
+    required this.locationModel,
+  });
+
+  final _i7.Key? key;
+
+  final _i8.LocationModel locationModel;
+
+  @override
+  String toString() {
+    return 'AttendeesRouteArgs{key: $key, locationModel: $locationModel}';
+  }
 }
 
 /// generated route for

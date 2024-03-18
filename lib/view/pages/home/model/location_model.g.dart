@@ -44,7 +44,7 @@ Users _$UsersFromJson(Map<String, dynamic> json) => Users(
 
 Map<String, dynamic> _$UsersToJson(Users instance) => <String, dynamic>{
       'startingDate': instance.startingDate,
-      'name': instance.name,
       'endingDate': instance.endingDate,
+      'name': instance.name,
       'email': instance.email,
     };
