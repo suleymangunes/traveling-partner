@@ -6,8 +6,12 @@ import 'package:traveling_partner/view/_product/home/widget/base_home_page_drawe
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 import 'package:traveling_partner/view/pages/home/view-model/location_state.dart';
 
+/// A base page widget for the home screen.
 class HomeBasePage extends StatelessWidget {
-  const HomeBasePage({super.key, required this.state});
+  /// Constructs a [HomeBasePage] widget.
+  const HomeBasePage({required this.state, super.key});
+
+  /// The state of locations to display.
   final LocationCompletedState state;
 
   @override

@@ -4,7 +4,9 @@ import 'package:traveling_partner/core/components/dropdown/changer_listtie_with_
 import 'package:traveling_partner/core/components/dropdown/theme_changer_dropdown.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A widget for changing the theme.
 class ThemeChanger extends StatelessWidget {
+  /// Constructs a [ThemeChanger] widget.
   const ThemeChanger({
     super.key,
   });

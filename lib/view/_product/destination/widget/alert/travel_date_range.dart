@@ -15,11 +15,15 @@ import 'package:traveling_partner/view/pages/destination/view-model/i_travel_dat
 import 'package:traveling_partner/view/pages/destination/view-model/travel_date_cubit.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A dialog widget for selecting travel dates.
 class TravelDateRange extends StatefulWidget {
+  /// Constructs a [TravelDateRange] widget.
   const TravelDateRange({
-    super.key,
     required this.locationModel,
+    super.key,
   });
+
+  /// The location model associated with the travel dates.
   final LocationModel locationModel;
 
   @override

@@ -4,7 +4,10 @@ import 'package:traveling_partner/core/extension/constant/constant_extension.dar
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+// ignore: lines_longer_than_80_chars
+/// A button widget displayed when an error occurs during destination registration.
 class DestinationErrorButton extends StatelessWidget {
+  /// Constructs a [DestinationErrorButton] widget.
   const DestinationErrorButton({
     super.key,
   });

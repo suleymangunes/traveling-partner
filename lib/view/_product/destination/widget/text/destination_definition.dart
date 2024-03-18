@@ -4,12 +4,15 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A widget displaying the definition of a destination.
 class DestinationDefinition extends StatelessWidget {
+  /// Constructs a [DestinationDefinition] widget.
   const DestinationDefinition({
-    super.key,
     required this.locationModel,
+    super.key,
   });
 
+  /// The [LocationModel] containing information about the destination.
   final LocationModel locationModel;
 
   @override

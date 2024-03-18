@@ -5,10 +5,12 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/extension/validator/string_validator.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A text field widget for entering name and surname.
 class NameSurnameTextField extends StatelessWidget {
+  /// Constructs a [NameSurnameTextField] widget.
   const NameSurnameTextField({
-    super.key,
     required TextEditingController nameController,
+    super.key,
   }) : _nameController = nameController;
 
   final TextEditingController _nameController;

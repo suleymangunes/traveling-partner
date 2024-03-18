@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +11,23 @@ import 'package:traveling_partner/core/init/cubit/theme/theme_cubit.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// **ThemeChangeDropdown Widget**
+///
+/// A widget representing a dropdown for changing the theme.
+/// This dropdown allows the user to select between light, dark, or system theme.
+///
+/// Requires the following dependencies:
+/// - easy_localization:
+/// - flutter_bloc:
+///
+/// Example Usage:
+/// ```dart
+/// ThemeChangeDropdown()
+/// ```
 class ThemeChangeDropdown extends StatelessWidget {
+  /// Constructor for ThemeChangeDropdown.
+  ///
+  /// [key] is an optional parameter for widget identification.
   const ThemeChangeDropdown({super.key});
 
   @override
@@ -24,7 +42,7 @@ class ThemeChangeDropdown extends StatelessWidget {
               _systemRadio(state, context),
               _lightRadio(state, context),
               _darkRadio(state, context),
-              _actions(context, state)
+              _actions(context, state),
             ],
           );
         },
@@ -101,11 +119,9 @@ class ThemeChangeDropdown extends StatelessWidget {
           case ThemeConstants.lightRadio:
             BlocProvider.of<ThemeCubit>(context).makelight();
             Navigator.pop(context);
-            break;
           case ThemeConstants.darkRadio:
             BlocProvider.of<ThemeCubit>(context).makeDark();
             Navigator.pop(context);
-            break;
           default:
             BlocProvider.of<ThemeCubit>(context).makeSystem();
             Navigator.pop(context);
@@ -125,9 +141,7 @@ class ThemeChangeDropdown extends StatelessWidget {
         backgroundColor: context.colorScheme.primaryContainer,
         padding: context.textButtonSymetricPadding,
       ),
-      onPressed: () {
-        AppRouterObject.appRouter.maybePop();
-      },
+      onPressed: AppRouterObject.appRouter.maybePop,
       child: Text(
         LocaleKeys.buttonCancel.tr(),
         style: context.titleLarge,

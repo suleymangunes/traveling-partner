@@ -5,10 +5,12 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/extension/validator/email_validator.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A text field widget for entering email addresses.
 class EmailTextField extends StatelessWidget {
+  /// Constructs an [EmailTextField] widget.
   const EmailTextField({
-    super.key,
     required TextEditingController emailController,
+    super.key,
   }) : _emailController = emailController;
 
   final TextEditingController _emailController;

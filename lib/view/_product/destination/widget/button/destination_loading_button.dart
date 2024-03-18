@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 
+/// A button widget displayed when destination registration is in progress.
 class DestinationLoadingButton extends StatelessWidget {
+  /// Constructs a [DestinationLoadingButton] widget.
   const DestinationLoadingButton({
     super.key,
   });

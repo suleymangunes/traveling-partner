@@ -3,12 +3,15 @@ import 'package:traveling_partner/core/extension/context/context_extension.dart'
 import 'package:traveling_partner/core/init/localization/locale_common_keys.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A widget displaying the image of a destination.
 class DestinationImage extends StatelessWidget {
+  /// Constructs a [DestinationImage] widget.
   const DestinationImage({
-    super.key,
     required this.locationModel,
+    super.key,
   });
 
+  /// The location model containing destination information.
   final LocationModel locationModel;
 
   @override

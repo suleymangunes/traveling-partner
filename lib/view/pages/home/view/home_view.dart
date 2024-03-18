@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveling_partner/product/state-enum/state_enum.dart';
@@ -9,7 +11,12 @@ import 'package:traveling_partner/view/pages/home/view-model/i_location_state.da
 import 'package:traveling_partner/view/pages/home/view-model/location_cubit.dart';
 import 'package:traveling_partner/view/pages/home/view-model/location_state.dart';
 
+/// A widget that displays the home view of the application.
+///
+/// It listens to the [LocationCubit] state changes and updates the UI accordingly
+/// by displaying different pages based on the current state of the location data.
 class HomeView extends StatelessWidget {
+  /// Constructs a [HomeView] widget.
   const HomeView({super.key});
 
   @override

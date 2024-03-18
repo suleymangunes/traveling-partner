@@ -5,11 +5,15 @@ import 'package:traveling_partner/view/_product/destination/widget/alert/travel_
 import 'package:traveling_partner/view/_product/destination/widget/button/whos_with_me_button.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A widget representing the bottom navigation features.
 class BottomNavigationFeatures extends StatelessWidget {
+  /// Constructs a [BottomNavigationFeatures] widget.
   const BottomNavigationFeatures({
-    super.key,
     required this.location,
+    super.key,
   });
+
+  /// The location model associated with the bottom navigation features.
   final LocationModel location;
 
   @override
@@ -26,7 +30,7 @@ class BottomNavigationFeatures extends StatelessWidget {
               size: context.bigIconSize,
             ),
             onPressed: () {
-              showDialog(
+              showDialog<void>(
                 context: context,
                 builder: (context) {
                   return TravelDateRange(locationModel: location);

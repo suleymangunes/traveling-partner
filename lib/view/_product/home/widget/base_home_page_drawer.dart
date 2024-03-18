@@ -9,7 +9,9 @@ import 'package:traveling_partner/view/_product/home/drawer/drawer_text.dart';
 import 'package:traveling_partner/view/_product/home/drawer/sign_out_button.dart';
 import 'package:traveling_partner/view/_product/home/drawer/theme_changer.dart';
 
+/// Base drawer for the home screen.
 class BaseHomePageDrawer extends StatelessWidget {
+  /// Constructs a [BaseHomePageDrawer] widget.
   const BaseHomePageDrawer({super.key});
 
   @override
@@ -38,12 +40,13 @@ class BaseHomePageDrawer extends StatelessWidget {
     );
   }
 
+  /// Builds a dropdown button to change the app's language.
   DropdownButton<dynamic> changeLocalWithDropdown(BuildContext context) {
     return DropdownButton(
       value: context.locale,
       items: LocaleVariables.localItems(context),
       onChanged: (value) {
-        context.setLocale(value);
+        context.setLocale(value as Locale);
         Navigator.pop(context);
       },
     );

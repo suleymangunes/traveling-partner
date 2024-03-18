@@ -9,7 +9,14 @@ import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/auth/login/service/login_service.dart';
 import 'package:traveling_partner/view/auth/login/view-model/get_it_login_instance.dart';
 
+/// A class containing a button for signing in with a Google account.
+///
+/// This class provides a button for users to sign in with their Google account.
+/// The button displays the Google logo and the text "Sign in with Google".
+/// When clicked, the user is prompted to sign in with their Google account,
+/// using the [LoginService] class to handle the authentication process.
 class SignInWithGoogle extends StatelessWidget with GetItLoginInstance {
+  /// Creates a button for signing in with Google.
   const SignInWithGoogle({
     super.key,
   });
@@ -25,7 +32,8 @@ class SignInWithGoogle extends StatelessWidget with GetItLoginInstance {
         minimumSize: context.buttonSized,
       ),
       onPressed: () async {
-        LoginService(authInstance: FirebaseAuth.instance).loginWithGoogle();
+        await LoginService(authInstance: FirebaseAuth.instance)
+            .loginWithGoogle();
       },
       child: Row(
         children: [

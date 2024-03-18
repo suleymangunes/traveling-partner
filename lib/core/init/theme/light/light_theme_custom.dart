@@ -3,7 +3,9 @@ import 'package:traveling_partner/core/constants/enum/font_enum.dart';
 import 'package:traveling_partner/core/init/theme/color-scheme/color_scheme_common.dart';
 import 'package:traveling_partner/core/init/theme/color-scheme/color_scheme_light.dart';
 
+/// Custom light theme for the application.
 class LightThemeCustom {
+  /// Constructor to initialize the light theme.
   LightThemeCustom() {
     theme = ThemeData(
       useMaterial3: true,
@@ -53,5 +55,6 @@ class LightThemeCustom {
     );
   }
 
+  /// The light theme data.
   late ThemeData theme;
 }

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A widget displaying the title for picking travel date.
 class TravelDatePickTitle extends StatelessWidget {
+  /// Constructs a [TravelDatePickTitle] widget.
   const TravelDatePickTitle({
     super.key,
   });

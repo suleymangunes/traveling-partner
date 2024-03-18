@@ -9,24 +9,46 @@ import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// **LocationCard Widget**
+///
+/// A widget representing a card displaying information about a location.
+/// This card includes an image, name, definition, city, and country of the
+/// location.
+///
+/// Requires the following dependencies:
+/// - easy_localization:s
+///
+/// Example Usage:
+/// ```dart
+/// LocationCard(location: locationData)
+/// ```
 class LocationCard extends StatelessWidget {
-  const LocationCard({super.key, required this.location});
+  /// Constructor for LocationCard.
+  ///
+  /// [location] specifies the LocationModel containing location information.
+  /// [key] is an optional parameter for widget identification.
+  const LocationCard({required this.location, super.key});
+
+  /// The LocationModel containing location information.
   final LocationModel location;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      // Adjusting card height for better appearance
       height: context.cardHeight * 1.03,
       child: Card(
         shape: RoundedRectangleBorder(
+          // Applying border radius to the card
           borderRadius: context.cardBorderRadius,
         ),
-        elevation: context.cardShadow,
-        surfaceTintColor: Colors.transparent,
-        clipBehavior: Clip.antiAlias,
-        margin: context.cardMargin,
+        elevation: context.cardShadow, // Applying shadow to the card
+        surfaceTintColor: Colors.transparent, // Making card surface transparen
+        clipBehavior: Clip.antiAlias, // Applying anti-aliasing to the card clip
+        margin: context.cardMargin, // Setting margin for the card
         child: InkWell(
           onTap: () {
+            // Navigating to destination route on tap
             AppRouterObject.appRouter
                 .push(DestinationRoute(location: location));
           },
@@ -45,11 +67,14 @@ class LocationCard extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
+                      // ignore: lines_longer_than_80_chars
+                      // Displaying location name with bold and large spacing style
                       location.name ?? LocaleKeys.alertNotFound.tr(),
                       style: context.spacingBoldTitleLarge,
                     ),
                     context.tinySSizedBox,
                     Text(
+                      // Displaying location definition with small title style
                       location.definition ?? LocaleKeys.alertNotFound.tr(),
                       style: context.titleSmall,
                     ),
@@ -57,11 +82,17 @@ class LocationCard extends StatelessWidget {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(location.city ?? LocaleKeys.alertNotFound.tr(),
-                            style: context.bodyLarge),
-                        Text(", ", style: context.bodyLarge),
-                        Text(location.country ?? LocaleKeys.alertNotFound.tr(),
-                            style: context.bodyLarge),
+                        Text(
+                          // Displaying location city with large body style
+                          location.city ?? LocaleKeys.alertNotFound.tr(),
+                          style: context.bodyLarge,
+                        ),
+                        Text(', ', style: context.bodyLarge),
+                        Text(
+                          // Displaying location country with large body style
+                          location.country ?? LocaleKeys.alertNotFound.tr(),
+                          style: context.bodyLarge,
+                        ),
                       ],
                     ),
                   ],

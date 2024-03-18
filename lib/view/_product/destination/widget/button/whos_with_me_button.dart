@@ -8,11 +8,15 @@ import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A button widget used to navigate to the attendees page.
 class WhosWithMeButton extends StatelessWidget {
+  /// Constructs a [WhosWithMeButton] widget.
   const WhosWithMeButton({
-    super.key,
     required this.locationModel,
+    super.key,
   });
+
+  /// The location model containing destination information.
   final LocationModel locationModel;
 
   @override

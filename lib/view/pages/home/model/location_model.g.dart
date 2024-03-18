@@ -35,10 +35,12 @@ Map<String, dynamic> _$LocationModelToJson(LocationModel instance) =>
 
 Users _$UsersFromJson(Map<String, dynamic> json) => Users(
       startingDate: DateTime.fromMillisecondsSinceEpoch(
-          json['starting_date'].seconds * 1000),
+        (json['starting_date'] as Timestamp).millisecondsSinceEpoch,
+      ),
       name: json['name'] as String?,
       endingDate: DateTime.fromMillisecondsSinceEpoch(
-          json['ending_date'].seconds * 1000),
+        (json['ending_date'] as Timestamp).millisecondsSinceEpoch,
+      ),
       email: json['email'] as String?,
     );
 

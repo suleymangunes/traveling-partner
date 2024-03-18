@@ -5,16 +5,23 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/extension/validator/string_validator.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A text field widget for entering passwords.
 class PasswordTextField extends StatelessWidget {
+  /// Constructs a [PasswordTextField] widget.
   const PasswordTextField({
-    super.key,
     required TextEditingController passwordController,
     required this.passwordObscure,
+    super.key,
     this.onPressed,
   }) : _passwordController = passwordController;
 
+  /// Controller for managing the password text field.
   final TextEditingController _passwordController;
+
+  /// Indicates whether the password should be obscured.
   final bool passwordObscure;
+
+  /// Callback function triggered when the visibility button is pressed.
   final void Function()? onPressed;
 
   @override

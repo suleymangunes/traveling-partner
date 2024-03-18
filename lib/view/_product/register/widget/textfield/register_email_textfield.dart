@@ -7,8 +7,8 @@ import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
 class RegisterEmailTextField extends StatelessWidget {
   const RegisterEmailTextField({
-    super.key,
     required TextEditingController emailController,
+    super.key,
   }) : _emailController = emailController;
 
   final TextEditingController _emailController;

@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:traveling_partner/view/pages/attendees/view/attendees_view.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// Represents the page for viewing attendees.
 @RoutePage()
 class AttendeesPage extends StatelessWidget {
-  const AttendeesPage({super.key, required this.locationModel});
+  /// Constructs an [AttendeesPage] with the provided [locationModel].
+  const AttendeesPage({required this.locationModel, super.key});
+
+  /// The location model associated with the attendees.
   final LocationModel locationModel;
 
   @override

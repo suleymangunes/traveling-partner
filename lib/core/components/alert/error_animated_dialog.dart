@@ -8,7 +8,24 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// **ErrorAnimatedDialog Widget**
+///
+/// A widget representing an animated error dialog.
+/// This dialog displays an error animation along with a message,
+/// and provides an option to try again.
+///
+/// Requires the following dependencies:
+/// - easy_localization:
+/// - lottie:
+///
+/// Example Usage:
+/// ```dart
+/// ErrorAnimatedDialog()
+/// ```
 class ErrorAnimatedDialog extends StatelessWidget {
+  /// Constructor for ErrorAnimatedDialog.
+  ///
+  /// [key] is an optional parameter for widget identification.
   const ErrorAnimatedDialog({
     super.key,
   });
@@ -26,12 +43,15 @@ class ErrorAnimatedDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // Displaying localized alert message about the problem
           Text(
             LocaleKeys.alertThereisProblem.tr(),
             textAlign: TextAlign.center,
             style: context.titleLarge,
           ),
+          // Adding small vertical space between messages
           context.smallSizedBox,
+          // Displaying localized message to instruct trying again
           Text(
             LocaleKeys.alertProblemTryAgain.tr(),
             textAlign: TextAlign.center,
@@ -39,15 +59,16 @@ class ErrorAnimatedDialog extends StatelessWidget {
           ),
         ],
       ),
+      // Aligning actions (buttons) to the center
       actionsAlignment: MainAxisAlignment.center,
       actions: [
+        // Button to try again, triggers AppRouter's maybePop function
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: context.colorScheme.primary,
           ),
-          onPressed: () {
-            AppRouterObject.appRouter.maybePop();
-          },
+          onPressed: AppRouterObject.appRouter.maybePop,
+          // Displaying localized text on the button
           child: Text(
             LocaleKeys.buttonTryAgain.tr(),
             style: context.titleLargeSpacingBg,

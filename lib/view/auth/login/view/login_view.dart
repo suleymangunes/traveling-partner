@@ -8,7 +8,9 @@ import 'package:traveling_partner/view/_product/login/text-button/havent_account
 import 'package:traveling_partner/view/_product/login/textfield/email_textfield.dart';
 import 'package:traveling_partner/view/_product/login/textfield/password_text_field.dart';
 
+/// The view widget for the login screen.
 class LoginView extends StatefulWidget {
+  /// Constructs a [LoginView] widget.
   const LoginView({super.key});
 
   @override

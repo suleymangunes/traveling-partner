@@ -5,8 +5,10 @@ import 'package:traveling_partner/view/auth/register/view-model/get_it_register_
 import 'package:traveling_partner/view/auth/register/view-model/register_cubit.dart';
 import 'package:traveling_partner/view/auth/register/view/register_view.dart';
 
+/// A page widget for the user registration process.
 @RoutePage()
 class RegisterPage extends StatelessWidget with GetItRegisterInstance {
+  /// Constructs a [RegisterPage] widget.
   const RegisterPage({super.key});
 
   @override

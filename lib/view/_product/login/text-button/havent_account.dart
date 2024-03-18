@@ -5,7 +5,9 @@ import 'package:traveling_partner/core/init/navigation/app_router.gr.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A button widget for users who don't have an account yet.
 class HaventAccount extends StatelessWidget {
+  /// Constructs a [HaventAccount] widget.
   const HaventAccount({
     super.key,
   });
@@ -17,18 +19,19 @@ class HaventAccount extends StatelessWidget {
         AppRouterObject.appRouter.push(const RegisterRoute());
       },
       child: RichText(
-          text: TextSpan(
-        children: [
-          TextSpan(
-            style: context.bodyLarge,
-            text: LocaleKeys.infoDontAccount.tr(),
-          ),
-          TextSpan(
-            style: context.bodyLargeBold,
-            text: LocaleKeys.buttonRegisterNow.tr(),
-          ),
-        ],
-      )),
+        text: TextSpan(
+          children: [
+            TextSpan(
+              style: context.bodyLarge,
+              text: LocaleKeys.infoDontAccount.tr(),
+            ),
+            TextSpan(
+              style: context.bodyLargeBold,
+              text: LocaleKeys.buttonRegisterNow.tr(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

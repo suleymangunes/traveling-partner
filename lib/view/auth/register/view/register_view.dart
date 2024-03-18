@@ -7,7 +7,9 @@ import 'package:traveling_partner/view/_product/register/widget/textbutton/login
 import 'package:traveling_partner/view/_product/register/widget/textfield/name_surname_text_field.dart';
 import 'package:traveling_partner/view/_product/register/widget/textfield/register_email_textfield.dart';
 
+/// A view widget for user registration.
 class RegisterView extends StatefulWidget {
+  /// Constructs a [RegisterView] widget.
   const RegisterView({super.key});
 
   @override

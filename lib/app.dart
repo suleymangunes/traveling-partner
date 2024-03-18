@@ -7,7 +7,13 @@ import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/core/init/theme/dark/dark_theme_custom.dart';
 import 'package:traveling_partner/core/init/theme/light/light_theme_custom.dart';
 
+/// The main application widget.
+///
+/// It listens to the theme state changes using `BlocBuilder` and `ThemeCubit`
+/// to toggle between light and dark themes. Additionally, it configures
+/// localization settings and initializes navigation with `AppRouterObject`.
 class MyApp extends StatelessWidget {
+  /// Constructs the `MyApp` widget.
   const MyApp({super.key});
 
   @override

@@ -3,7 +3,9 @@ import 'package:traveling_partner/core/constants/enum/font_enum.dart';
 import 'package:traveling_partner/core/init/theme/color-scheme/color_scheme_common.dart';
 import 'package:traveling_partner/core/init/theme/color-scheme/color_scheme_dark.dart';
 
+/// Custom dark theme for the application.
 class DarkThemeCustom {
+  /// Constructor to initialize the dark theme.
   DarkThemeCustom() {
     theme = ThemeData(
       useMaterial3: true,
@@ -53,6 +55,6 @@ class DarkThemeCustom {
     );
   }
 
-  /// The ThemeData instance representing the dark theme.
+  /// The dark theme data.
   late ThemeData theme;
 }

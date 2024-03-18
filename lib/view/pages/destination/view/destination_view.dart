@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
@@ -13,9 +15,12 @@ import 'package:traveling_partner/view/_product/destination/widget/text/destinat
 import 'package:traveling_partner/view/_product/destination/widget/text/places_text.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// DestinationView widget displays information about a travel destination.
 class DestinationView extends StatelessWidget {
-  const DestinationView({super.key, required this.locationModel});
+  /// Constructor takes a required `locationModel` parameter of type `LocationModel`.
+  const DestinationView({required this.locationModel, super.key});
 
+  /// Location model for data
   final LocationModel locationModel;
 
   @override
@@ -33,7 +38,7 @@ class DestinationView extends StatelessWidget {
                     top: context.iconTopSpace,
                     left: context.iconLeftSpace,
                     child: const BackWithBg(),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -46,7 +51,7 @@ class DestinationView extends StatelessWidget {
                     children: [
                       DestinationName(locationModel: locationModel),
                       const Spacer(),
-                      ShareDestionationButton(locationModel: locationModel)
+                      ShareDestionationButton(locationModel: locationModel),
                     ],
                   ),
                   DestinationDefinition(locationModel: locationModel),
@@ -73,7 +78,7 @@ class DestinationView extends StatelessWidget {
       itemCount: locationModel.places?.length ?? 0,
       itemBuilder: (BuildContext context, int index) {
         return Text(
-          "• ${locationModel.places![index]}",
+          '• ${locationModel.places![index]}',
           style: context.bodyLarge,
         );
       },

@@ -4,7 +4,9 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// A button widget for navigating to the login screen.
 class LoginNow extends StatelessWidget {
+  /// Constructs a [LoginNow] widget.
   const LoginNow({
     super.key,
   });
@@ -12,22 +14,21 @@ class LoginNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        AppRouterObject.appRouter.maybePop();
-      },
+      onPressed: AppRouterObject.appRouter.maybePop,
       child: RichText(
-          text: TextSpan(
-        children: [
-          TextSpan(
-            style: context.bodyLarge,
-            text: LocaleKeys.infoHaveAccount.tr(),
-          ),
-          TextSpan(
-            style: context.bodyLargeBold,
-            text: LocaleKeys.buttonLoginNow.tr(),
-          ),
-        ],
-      )),
+        text: TextSpan(
+          children: [
+            TextSpan(
+              style: context.bodyLarge,
+              text: LocaleKeys.infoHaveAccount.tr(),
+            ),
+            TextSpan(
+              style: context.bodyLargeBold,
+              text: LocaleKeys.buttonLoginNow.tr(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

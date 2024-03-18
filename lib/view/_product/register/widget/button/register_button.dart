@@ -13,13 +13,15 @@ import 'package:traveling_partner/view/auth/register/model/register_model.dart';
 import 'package:traveling_partner/view/auth/register/view-model/i_register_cubit.dart';
 import 'package:traveling_partner/view/auth/register/view-model/register_cubit.dart';
 
+/// A button widget used for user registration.
 class RegisterButton extends StatelessWidget {
+  /// Constructs a [RegisterButton] widget.
   const RegisterButton({
-    super.key,
     required GlobalKey<FormState> formKey,
     required TextEditingController nameController,
     required TextEditingController emailController,
     required TextEditingController passwordController,
+    super.key,
   })  : _formKey = formKey,
         _nameController = nameController,
         _emailController = emailController,
@@ -35,7 +37,7 @@ class RegisterButton extends StatelessWidget {
     return BlocConsumer<RegisterCubit, IRegisterState>(
       listener: (context, state) {
         if (state.status == StateEnum.loading) {
-          showDialog(
+          showDialog<void>(
             barrierDismissible: false,
             context: context,
             builder: (context) {
@@ -44,7 +46,7 @@ class RegisterButton extends StatelessWidget {
           );
         } else if (state.status == StateEnum.error) {
           Navigator.pop(context);
-          showDialog(
+          showDialog<void>(
             barrierDismissible: false,
             context: context,
             builder: (context) {
@@ -73,7 +75,7 @@ class RegisterButton extends StatelessWidget {
                 email: _emailController.text,
                 password: _passwordController.text,
               );
-              context.read<RegisterCubit>().register(registerModel);
+              await context.read<RegisterCubit>().register(registerModel);
             }
           },
           child: Text(

@@ -4,7 +4,22 @@ import 'package:traveling_partner/core/extension/constant/constant_extension.dar
 import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 
+/// **OrWidget Widget**
+///
+/// A widget representing a horizontal divider with text "Or" in the middle.
+///
+/// Requires the following dependencies:
+/// - easy_localization:
+///
+/// Example Usage:
+/// ```dart
+/// OrWidget()
+/// ```
+
 class OrWidget extends StatelessWidget {
+  /// Constructor for OrWidget.
+  ///
+  /// [key] is an optional parameter for widget identification.
   const OrWidget({
     super.key,
   });
@@ -13,10 +28,12 @@ class OrWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        // Adding a horizontal divider
         const Expanded(child: Divider()),
         Padding(
           padding: context.buttonPadding,
           child: Text(
+            // Displaying "Or" text localized
             LocaleKeys.infoOr.tr(),
             style: context.bodyLarge,
           ),

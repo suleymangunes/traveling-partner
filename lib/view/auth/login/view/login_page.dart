@@ -5,8 +5,10 @@ import 'package:traveling_partner/view/auth/login/view-model/get_it_login_instan
 import 'package:traveling_partner/view/auth/login/view-model/login_cubit.dart';
 import 'package:traveling_partner/view/auth/login/view/login_view.dart';
 
+/// A page widget for the login screen.
 @RoutePage()
 class LoginPage extends StatelessWidget with GetItLoginInstance {
+  /// Constructs a [LoginPage] widget.
   const LoginPage({super.key});
 
   @override

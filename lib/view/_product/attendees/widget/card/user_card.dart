@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:traveling_partner/core/extension/constant/constant_extension.dart';
 import 'package:traveling_partner/core/extension/context/context_extension.dart';
@@ -6,14 +8,19 @@ import 'package:traveling_partner/view/_product/attendees/widget/image/user_imag
 import 'package:traveling_partner/view/_product/attendees/widget/text/user_info.dart';
 import 'package:traveling_partner/view/pages/home/model/location_model.dart';
 
+/// A card widget representing a user with their information and a button to get contact.
 class UserCard extends StatelessWidget {
+  /// Constructs a [UserCard] widget.
   const UserCard({
-    super.key,
     required this.user,
     required this.location,
+    super.key,
   });
 
+  /// The user information.
   final Users user;
+
+  /// The location information.
   final LocationModel location;
 
   @override
@@ -34,7 +41,7 @@ class UserCard extends StatelessWidget {
             GetContactButton(
               user: user,
               location: location,
-            )
+            ),
           ],
         ),
       ),

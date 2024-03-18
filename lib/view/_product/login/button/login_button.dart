@@ -13,16 +13,22 @@ import 'package:traveling_partner/view/auth/login/model/login_model.dart';
 import 'package:traveling_partner/view/auth/login/view-model/i_login_state.dart';
 import 'package:traveling_partner/view/auth/login/view-model/login_cubit.dart';
 
+/// A button widget used for logging in.
 class LoginButton extends StatelessWidget {
+  /// Constructs a [LoginButton] widget.
   const LoginButton({
-    super.key,
     required GlobalKey<FormState> formKey,
     required this.emailController,
     required this.passwordController,
+    super.key,
   }) : _formKey = formKey;
 
   final GlobalKey<FormState> _formKey;
+
+  /// Email controller
   final TextEditingController emailController;
+
+  /// Password Controller
   final TextEditingController passwordController;
 
   @override
@@ -30,7 +36,7 @@ class LoginButton extends StatelessWidget {
     return BlocConsumer<LoginCubit, ILoginState>(
       listener: (context, state) {
         if (state.status == StateEnum.loading) {
-          showDialog(
+          showDialog<void>(
             barrierDismissible: false,
             context: context,
             builder: (context) {
@@ -39,7 +45,7 @@ class LoginButton extends StatelessWidget {
           );
         } else if (state.status == StateEnum.error) {
           Navigator.pop(context);
-          showDialog(
+          showDialog<void>(
             barrierDismissible: false,
             context: context,
             builder: (context) {
@@ -65,7 +71,7 @@ class LoginButton extends StatelessWidget {
                 email: emailController.text,
                 password: passwordController.text,
               );
-              context.read<LoginCubit>().loginWithEmail(loginModel);
+              await context.read<LoginCubit>().loginWithEmail(loginModel);
             }
           },
           child: Text(

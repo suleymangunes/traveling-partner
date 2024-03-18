@@ -5,7 +5,9 @@ import 'package:traveling_partner/core/extension/text/text_extension.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/product/widget/animation/error_animation.dart';
 
+/// Widget to display an error page in the home screen.
 class HomeErrorPage extends StatelessWidget {
+  /// Constructs a [HomeErrorPage] widget.
   const HomeErrorPage({super.key});
 
   @override

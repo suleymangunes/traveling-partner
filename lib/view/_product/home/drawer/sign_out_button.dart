@@ -8,7 +8,9 @@ import 'package:traveling_partner/core/init/navigation/app_router_object.dart';
 import 'package:traveling_partner/product/init/lang/locale_keys.g.dart';
 import 'package:traveling_partner/view/auth/login/service/login_service.dart';
 
+/// A button widget for signing out the current user.
 class SignOutButton extends StatelessWidget {
+  /// Constructs a [SignOutButton] widget.
   const SignOutButton({
     super.key,
   });
@@ -21,7 +23,7 @@ class SignOutButton extends StatelessWidget {
         final loginService = LoginService(authInstance: FirebaseAuth.instance);
         await loginService.signOutEmail();
         await loginService.signOutGoogle();
-        AppRouterObject.appRouter
+        await AppRouterObject.appRouter
             .pushAndPopUntil(const LoginRoute(), predicate: (route) => false);
       },
       child: Text(
