@@ -2,6 +2,9 @@
 
 Find out who else will be traveling to your destination. Get in touch and make your trip more fun.
 
+![Frame 2 (1)](https://github.com/suleymangunes/traveling-partner/assets/62201710/34b0b376-63ad-47f3-8315-b2d8650f15b3)
+
+
 ## Application Features
 
 - Sign up and login with email.
