@@ -26,6 +26,9 @@ dependencies:
   # object equality
   equatable: ^2.0.5
 
+  # localization
+  easy_localization: ^3.0.5
+
   # Authentication
   firebase_auth: ^4.17.9
 
@@ -102,6 +105,7 @@ flutter:
     - assets/animation/
     - assets/svg/
     - assets/splash/
+    - assets/translations/
 
   fonts:
     - family: CabinRegular
