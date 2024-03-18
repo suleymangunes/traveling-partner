@@ -33,10 +33,16 @@ abstract class LocaleKeys {
   static const String justError = 'Hata';
   static const String travelPartnerRequest =
       'Gezgin Ortağım olmak ister misiniz?';
-
   static const String hiIam = 'Merhaba, ben';
   static const String betwwen = 'tarihleri arasında';
   static const String makeTravel = 'konumuna seyahat edeceğim.';
   static const String travelWithMe =
       'Benimle beraber seyahat ederek seyahatini daha eğlenceli hale getirmek ister misin?';
+  static const String theme = 'Tema';
+  static const String pickTheme = 'Tema Seç';
+  static const String darkTheme = 'Karanlık Tema';
+  static const String lightTheme = 'Aydınlık Tema';
+  static const String systemTheme = 'Sistem Varsayılanı';
+  static const String update = 'Uygula';
+  static const String cancel = 'İptal';
 }

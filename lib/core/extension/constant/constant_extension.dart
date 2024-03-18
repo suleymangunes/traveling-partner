@@ -38,6 +38,8 @@ extension WidgetExtension on BuildContext {
       const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
 
   EdgeInsets get attendeesCardPadding => const EdgeInsets.all(18.0);
+  EdgeInsets get textButtonSymetricPadding =>
+      const EdgeInsets.symmetric(horizontal: 20);
 }
 
 extension SizeExtensions on BuildContext {

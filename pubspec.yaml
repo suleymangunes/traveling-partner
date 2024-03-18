@@ -41,6 +41,10 @@ dependencies:
   # sign in with google
   google_sign_in: ^6.2.1
 
+  # caching
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
   # json
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
