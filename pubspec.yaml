@@ -67,6 +67,9 @@ dev_dependencies:
   # linter
   flutter_lints: ^3.0.0
 
+  # app icon
+  flutter_launcher_icons: ^0.13.1
+
   # splash screen
   flutter_native_splash: ^2.4.0
 
@@ -78,6 +81,13 @@ flutter_native_splash:
   color_dark: "#009000"
 
   web: false
+
+# App icon
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.jpg"
+
 
 flutter:
 
