@@ -97,7 +97,7 @@ extension WidgetExtension on BuildContext {
       const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
 
   /// Specifies the padding for attendees card widgets.
-  EdgeInsets get attendeesCardPadding => const EdgeInsets.all(18);
+  EdgeInsets get attendeesCardPadding => const EdgeInsets.all(16);
 
   /// Specifies the symmetric padding for text buttons.
   EdgeInsets get textButtonSymetricPadding =>
